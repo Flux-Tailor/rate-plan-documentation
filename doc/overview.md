@@ -69,7 +69,8 @@ For instance:
 Our MVP documentation version covers:
 
 1. Purpose of Documentation
-2. Schema Reference
+2. Utility Data Input
+3. User Data Output
 3. XML Outline of Schema
 
 ## GitHub and Pages
