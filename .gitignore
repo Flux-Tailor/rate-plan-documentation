@@ -18,5 +18,6 @@ _site/
 Gemfile.lock
 
 # virtual env and sphinx build
+_static/
 _build/
 ve/
