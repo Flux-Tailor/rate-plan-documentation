@@ -1,32 +1,37 @@
-# Overview
+---
+title: Rate Plan Schema documentation
+---
 
-## Purpose of the Rate Plan Schema Documentation
+# Welcome to the Rate Plan Schema documentation!
 
-The rate plan schema documentation serves as a comprehensive guide for understanding, implementing, and utilizing the standardized rate plan schema in the energy sector.
+```{toctree}
+:maxdepth: 2
+:caption: Contents:
+:hidden:
+
+self
+xml-schema
+some-feature
+another-feature
+```
+
+# Introduction
+
+This documentation serves as a comprehensive guide for understanding, implementing, and utilizing the standardized rate plan schema in the energy sector.
 
  Quick links to key sections:
   - [Rate Plan Schema Docs (v0.9)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.9/rate_plan_data_input.html)
   - [GitHub repository hosting XSD schemas](https://github.com/Flux-Tailor/rate-plan-documentation)
-  - [Link to Rate Plans section](#rate-plans)
+  - [Rate Plans ](#rate-plans)
   - [Data Dictionary](https://iedr-public-static-files.s3.amazonaws.com/documentation/IEDR_DataDictionary-RatePlanData_V001_20240112.pdf)
 
-## Our Schema
+## Rate Plan Data XML Schema
 
 The rate plan schema is an XML-based structure designed to standardize the representation of energy rate plans. It includes:
 
 - Core components (e.g., rate plans, charges, eligibility criteria)
 - Supporting elements (e.g., time-of-use periods, seasons, chargers, modifiers)
 - Auxiliary features (e.g., tariff book references, non-metered service charges)
-
-
-### XML Structure of Schema
-
-Our schema follows a hierarchical XML structure, defining elements, attributes, and their relationships. Key features include:
-
-- Namespace definitions
-- Complex and simple type definitions
-
-[Link to our XML structure]
 
 ## Rate Plan Concepts
 
@@ -71,7 +76,7 @@ Our MVP documentation version covers:
 1. Purpose of Documentation
 2. Utility Data Input
 3. User Data Output
-3. XML Outline of Schema
+4. XML Outline of Schema
 
 ## GitHub and Pages
 
