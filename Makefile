@@ -32,5 +32,5 @@ build:
 	$(PIP) install --upgrade pip
 	$(PIP) install --requirement $(REQUIREMENTS)
 
-clean:
+venv-clean:
 	rm -rf $(VE)
