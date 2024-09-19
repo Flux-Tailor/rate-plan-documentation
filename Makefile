@@ -11,7 +11,7 @@ PIP ?= ve/bin/pip
 # from the environment for the first two.
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= ve/bin/sphinx-build
-SOURCEDIR     = .
+SOURCEDIR     = doc
 BUILDDIR      = _build
 
 # Put it first so that "make" without argument is like "make help".
@@ -32,5 +32,5 @@ build:
 	$(PIP) install --upgrade pip
 	$(PIP) install --requirement $(REQUIREMENTS)
 
-clean:
+venv-clean:
 	rm -rf $(VE)
