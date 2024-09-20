@@ -11,8 +11,6 @@ title: Rate Plan Schema documentation
 
 self
 xml-schema
-some-feature
-another-feature
 ```
 
 # Introduction
@@ -22,11 +20,7 @@ This documentation serves as a comprehensive guide for understanding, implementi
  Quick links to key resources and sections:
   - [Rate Plan Schema Docs (v0.9)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.9/rate_plan_data_input.html)
   - [GitHub repository hosting XSD schemas](https://github.com/Flux-Tailor/rate-plan-schema)
-<<<<<<< HEAD
-  - [Link to Rate Plans section](#rate-plans)
-=======
   - [Rate Plans ](#rate-plans)
->>>>>>> 5acf53d9f25cac1042a2eb85123e4fdae8f10a3f
   - [Data Dictionary](https://iedr-public-static-files.s3.amazonaws.com/documentation/IEDR_DataDictionary-RatePlanData_V001_20240112.pdf)
 
 
@@ -81,3 +75,4 @@ This documentation version covers:
 Our documentation will be version-controlled and openly available on GitHub. GitHub Pages is used for easy access to the latest documentation.
 
 - [GitHub Repository](https://github.com/Flux-Tailor/rate-plan-documentation)
+
