@@ -5,7 +5,7 @@ title: Rate Plan Schema documentation
 # Welcome to the Rate Plan Schema documentation!
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :caption: Contents:
 :hidden:
 
@@ -19,11 +19,12 @@ another-feature
 
 This documentation serves as a comprehensive guide for understanding, implementing, and utilizing the standardized rate plan schema in the energy sector.
 
- Quick links to key sections:
+ Quick links to key resources and sections:
   - [Rate Plan Schema Docs (v0.9)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.9/rate_plan_data_input.html)
-  - [GitHub repository hosting XSD schemas](https://github.com/Flux-Tailor/rate-plan-documentation)
-  - [Rate Plans ](#rate-plans)
+  - [GitHub repository hosting XSD schemas](https://github.com/Flux-Tailor/rate-plan-schema)
+  - [Link to Rate Plans section](#rate-plans)
   - [Data Dictionary](https://iedr-public-static-files.s3.amazonaws.com/documentation/IEDR_DataDictionary-RatePlanData_V001_20240112.pdf)
+
 
 ## Rate Plan Data XML Schema
 
