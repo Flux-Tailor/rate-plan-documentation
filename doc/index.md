@@ -75,4 +75,3 @@ This documentation version covers:
 Our documentation will be version-controlled and openly available on GitHub. GitHub Pages is used for easy access to the latest documentation.
 
 - [GitHub Repository](https://github.com/Flux-Tailor/rate-plan-documentation)
-
