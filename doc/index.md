@@ -2,7 +2,7 @@
 title: Rate Plan Schema documentation
 ---
 
-# Welcome to the Rate Plan Schema documentation!
+# Rate Plan Schema Documentation
 
 ```{toctree}
 :maxdepth: 2
@@ -21,7 +21,7 @@ This documentation serves as a comprehensive guide for understanding, implementi
 
  Quick links to key sections:
   - [Rate Plan Schema Docs (v0.9)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.9/rate_plan_data_input.html)
-  - [GitHub repository hosting XSD schemas](https://github.com/Flux-Tailor/rate-plan-documentation)
+  - [GitHub repository hosting XSD schemas](https://github.com/Flux-Tailor/rate-plan-schema)
   - [Rate Plans ](#rate-plans)
   - [Data Dictionary](https://iedr-public-static-files.s3.amazonaws.com/documentation/IEDR_DataDictionary-RatePlanData_V001_20240112.pdf)
 
@@ -37,13 +37,7 @@ The rate plan schema is an XML-based structure designed to standardize the repre
 
 ### What's a Rate Plan?
 
-A rate plan is a structured set of rules and charges that determine how energy consumption is billed. It typically includes:
-
-- Base rates
-- Time-of-use pricing
-- Demand charges
-- Seasonal variations
-- Eligibility criteria
+A rate plan is a structured set of parameters and calculation rules that determine how energy consumption is billed. 
 
 
 ### What's the relationship between Utilities, Operating Companies, Service Classes and a “Rate Plan” ?
@@ -65,13 +59,12 @@ Utility → Operating Company → Service Class → Rate Plan
 For instance:
 - We have a utility named "National Energy Corp."
 - One of its operating companies is called "Midwest Power Distribution"
-- Within it, there exists a service class for "Residential" users
-- This service class could have multiple rate plans like "Standard Residential" or "Time-of-Use Residential" which again is designed to meet different customer needs, usage patterns, or policy objectives, all while under the class of residential users. 
-
+- Within it, there are multiple service classes for "Residential" users
+- This service class could have multiple sub service classes and rate plans like "SC-1A Standard Residential" or "SC1B Time-of-Use Residential" each of which are designed to meet different customer needs, usage patterns, or policy objectives.
 
 ## Available Documentation
 
-Our MVP documentation version covers:
+This documentation version covers:
 
 1. Purpose of Documentation
 2. Utility Data Input
@@ -80,6 +73,6 @@ Our MVP documentation version covers:
 
 ## GitHub and Pages
 
-Our documentation will be version-controlled and openly available on GitHub. We use GitHub Pages for easy access to the latest documentation.
+Our documentation will be version-controlled and openly available on GitHub. GitHub Pages is used for easy access to the latest documentation.
 
 - [GitHub Repository](https://github.com/Flux-Tailor/rate-plan-documentation)
