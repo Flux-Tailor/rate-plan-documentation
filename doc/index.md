@@ -10,7 +10,6 @@ title: Rate Plan Schema documentation
 :hidden:
 
 self
-xml-schema
 ```
 
 # Introduction
