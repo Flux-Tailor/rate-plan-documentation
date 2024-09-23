@@ -1,3 +1,13 @@
-sphinx===7.3.7
-sphinx_rtd_theme==2.0.0
 myst_parser==3.0.1
+sphinx===7.3.7
+sphinx-new-tab-link==0.6.0
+sphinx_rtd_theme==2.0.0
+sphinxcontrib-applehelp==2.0.0
+sphinxcontrib-devhelp==2.0.0
+sphinxcontrib-extdevhelper-kasane==0.2.0
+sphinxcontrib-htmlhelp==2.1.0
+sphinxcontrib-jquery==4.1
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==2.0.0
+sphinxcontrib-serializinghtml==2.0.0
+urllib3==2.2.3
