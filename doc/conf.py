@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Rate Plan Schema Documentation'
-copyright = 'Flux Tailor'
+copyright = 'NYSERDA'
 author = 'Flux Tailor'
 release = '0.1'
 
