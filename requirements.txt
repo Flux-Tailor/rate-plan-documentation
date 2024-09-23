@@ -1,5 +1,6 @@
 myst_parser==3.0.1
 sphinx===7.3.7
+sphinx-new-tab-link==0.6.0
 sphinx_rtd_theme==2.0.0
 sphinxcontrib-applehelp==2.0.0
 sphinxcontrib-devhelp==2.0.0
