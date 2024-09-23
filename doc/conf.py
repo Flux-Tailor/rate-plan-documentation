@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Rate Plan Schema Documentation'
-copyright = 'Flux Tailor'
+copyright = 'NYSERDA'
 author = 'Flux Tailor'
 release = '0.1'
 
@@ -15,7 +15,7 @@ release = '0.1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['myst_parser']
+extensions = ['myst_parser', 'sphinx_new_tab_link', ]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
