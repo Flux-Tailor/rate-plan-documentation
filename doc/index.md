@@ -28,7 +28,7 @@ This documentation serves as a comprehensive guide for understanding, implementi
 The rate plan schema is an XML-based structure designed to standardize the representation of energy rate plans. It includes:
 
 - Core components (e.g., rate plans, charges, eligibility criteria)
-- Supporting elements (e.g., time-of-use periods, seasons, chargers, modifiers)
+- Supporting elements (e.g., time-of-use periods, seasons, charges, modifiers)
 - Auxiliary features (e.g., tariff book references, non-metered service charges)
 
 ## Rate Plan Concepts
