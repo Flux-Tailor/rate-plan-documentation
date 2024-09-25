@@ -1,0 +1,11 @@
+/** css/custom.css **/
+
+@import 'theme.css';       /* for the Read the Docs theme */
+
+.wy-side-nav-search { 
+    background-color: #1d428a;
+}
+
+span.caption-text {
+    color: #f2a900;
+}

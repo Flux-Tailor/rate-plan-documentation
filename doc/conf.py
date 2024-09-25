@@ -15,7 +15,7 @@ release = '0.1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['myst_parser', 'sphinx_new_tab_link', ]
+extensions = ['myst_parser', 'sphinx_new_tab_link']
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -24,5 +24,16 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinx_rtd_theme'
-html_static_path = ['OxygenDocs']
+html_logo = "_static/iedr-logo.png"
+html_theme = "sphinx_rtd_theme"
+
+html_theme_options = {
+    'logo_only' : True,
+    'collapse_navigation': False,
+    'navigation_depth': 4,
+    'titles_only': False,
+}
+
+
+html_static_path = ['_static','OxygenDocs']
+html_css_files = ['css/custom.css']
