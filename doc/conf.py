@@ -24,11 +24,11 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_logo = "_static/iedr-logo.png"
+# html_logo = "_static/iedr-logo.png"
 html_theme = "sphinx_rtd_theme"
 
 html_theme_options = {
-    'logo_only' : True,
+    'logo_only' : False,
     'collapse_navigation': False,
     'navigation_depth': 4,
     'titles_only': False,

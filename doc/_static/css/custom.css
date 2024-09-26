@@ -9,3 +9,14 @@
 span.caption-text {
     color: #f2a900;
 }
+
+.rst-content .toctree-wrapper>p.caption,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+legend {
+  font-family: proxima-nova, Lato, Helvetica Neue, Arial, sans-serif !important;
+}
