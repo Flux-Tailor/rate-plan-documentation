@@ -20,7 +20,7 @@ This documentation serves as a resource for review of and collaboration on the I
   - [Rate Plan Schema Docs (v0.9)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.9/rate_plan_data_input.html)
   - [GitHub repository hosting XSD schemas](https://github.com/Flux-Tailor/rate-plan-schema)
   - [Rate Plan Concepts ](#rate-plan-concepts)
-  - [IEDR Rate Plan Browser ]([#rate-plans](https://iedr.nyserda.ny.gov/rate-plan/))
+  - [IEDR Rate Plan Browser ](https://iedr.nyserda.ny.gov/rate-plan/)
   - [Rate Plan Browser Data Dictionary](https://iedr-public-static-files.s3.amazonaws.com/documentation/IEDR_DataDictionary-RatePlanData_V001_20240112.pdf)
 
 
