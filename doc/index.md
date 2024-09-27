@@ -30,12 +30,11 @@ The rate plan schema is an XML-based structure designed to standardize the repre
 
 - Core components: rate plans and their associated eligibility limits and other criteria used to identify available rate plan options
 - Supporting elements: time-of-use periods, service thresholds, and other elements that determine which rate plan charges are applicable
-- Charges
-  
- - Charges from Tariff Book Leaves
- - Charges from Tariff Statements
- - Market Supply Charges
- - References to formally published tariff documentation and utility data sets. 
+- Charges:
+  - Charges from Tariff Book Leaves
+  - Charges from Tariff Statements
+  - Market Supply Charges
+  - References to formally published tariff documentation and utility data sets. 
 
 ## Available Documentation
 
