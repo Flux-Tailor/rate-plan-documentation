@@ -17,7 +17,7 @@ self
 This documentation serves as a resource for review of and collaboration on the IEDR rate plan schema under development to achieve IEDR's Rate Plan Data Access objectives. The schema will extend the current [IEDR Rate Plan Browser](https://iedr.nyserda.ny.gov/rate-plan/) data set to include all Rate Plan parameters needed for cost modeling.
 
  Quick links to key resources and sections:
-  - [Rate Plan Schema Docs (v0.9)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.9/rate_plan_data_input.html)
+  - [Rate Plan Schema Docs (v0.9)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.9/all_rate_plan_schemas/all_rate_plan_schemas.html)
   - [GitHub repository hosting XSD schemas](https://github.com/Flux-Tailor/rate-plan-schema)
   - [Rate Plan Concepts ](#rate-plan-concepts)
   - [IEDR Rate Plan Browser ](https://iedr.nyserda.ny.gov/rate-plan/)
