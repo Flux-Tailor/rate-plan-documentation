@@ -1,0 +1,1715 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for component effectivePeriod</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript"><!--
+        var propertiesBoxes= new Array('properties_TimeOfUsePeriodType_effectivePeriod', 
+				'properties_TimeOfUsePeriodType_RatePeriodNrNonHolidays', 
+				'properties_TimeOfUsePeriodType_RatePeriodNrHolidays', 
+				'properties_TimeOfUsePeriodType_dayType', 
+				'properties_TimeOfUsePeriodType_peakType', 
+				'properties_TimeOfUsePeriodType_appliesOnHolidays', 
+				'properties_TimeOfUsePeriodType_timeStart', 
+				'properties_TimeOfUsePeriodType_timeEnd', 
+				'properties_TimeOfUsePeriodType_measurementApplicable');
+var facetsBoxes= new Array('facets_TimeOfUsePeriodType_RatePeriodNrNonHolidays', 
+				'facets_TimeOfUsePeriodType_RatePeriodNrHolidays', 
+				'facets_TimeOfUsePeriodType_dayType', 
+				'facets_TimeOfUsePeriodType_peakType', 
+				'facets_TimeOfUsePeriodType_measurementApplicable');
+var usedByBoxes= new Array('usedBy_TimeOfUsePeriodType');
+var sourceBoxes= new Array('source_TimeOfUsePeriodType_effectivePeriod', 
+				'source_TimeOfUsePeriodType_RatePeriodNrNonHolidays', 
+				'source_TimeOfUsePeriodType_RatePeriodNrHolidays', 
+				'source_TimeOfUsePeriodType_dayType', 
+				'source_TimeOfUsePeriodType_peakType', 
+				'source_TimeOfUsePeriodType_appliesOnHolidays', 
+				'source_TimeOfUsePeriodType_timeStart', 
+				'source_TimeOfUsePeriodType_timeEnd', 
+				'source_TimeOfUsePeriodType_chargesComponent', 
+				'source_TimeOfUsePeriodType_measurementApplicable', 
+				'source_TimeOfUsePeriodType');
+var instanceBoxes= new Array('instance_TimeOfUsePeriodType_effectivePeriod');
+var diagramBoxes= new Array('diagram_TimeOfUsePeriodType_effectivePeriod', 
+				'diagram_TimeOfUsePeriodType_RatePeriodNrNonHolidays', 
+				'diagram_TimeOfUsePeriodType_RatePeriodNrHolidays', 
+				'diagram_TimeOfUsePeriodType_dayType', 
+				'diagram_TimeOfUsePeriodType_peakType', 
+				'diagram_TimeOfUsePeriodType_appliesOnHolidays', 
+				'diagram_TimeOfUsePeriodType_timeStart', 
+				'diagram_TimeOfUsePeriodType_timeEnd', 
+				'diagram_TimeOfUsePeriodType_chargesComponent', 
+				'diagram_TimeOfUsePeriodType_measurementApplicable', 
+				'diagram_TimeOfUsePeriodType');
+var annotationBoxes= new Array('annotations_TimeOfUsePeriodType_chargesComponent');
+var modelBoxes= new Array('model_TimeOfUsePeriodType_effectivePeriod', 
+				'model_TimeOfUsePeriodType');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, annotationBoxes);" class="control" /></span><span class="globalControlName">Annotations</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, diagramBoxes);" class="control" /></span><span class="globalControlName">Diagrams</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, facetsBoxes);" class="control" /></span><span class="globalControlName">Facets </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, instanceBoxes);" class="control" /></span><span class="globalControlName">Instances</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, modelBoxes);" class="control" /></span><span class="globalControlName">Model </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
+                     </tr>
+                  </table>
+                  <div style="text-align:center"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+               </td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div><a id="TimeOfUsePeriodType_effectivePeriod"></a><div class="componentTitle">Element <span class="qname"><b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component TimeOfUsePeriodType')">TimeOfUsePeriodType</a></b> / effectivePeriod</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_TimeOfUsePeriodType_effectivePeriod" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_TimeOfUsePeriodType_effectivePeriod');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_TimeOfUsePeriodType_effectivePeriod" style="display:block"><img alt="Diagram" style="border:0" src="img/time_of_use_periods_xsd_Element_effectivePeriod.jpeg" usemap="#time_of_use_periods_xsd_Element_effectivePeriod" /><map name="time_of_use_periods_xsd_Element_effectivePeriod" id="time_of_use_periods_xsd_Element_effectivePeriod"><area alt="common_definitions_xsd_Complex_Type_dateIntervalType.tmp#dateIntervalType_startDate" href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType_startDate" coords="223,40,303,64" /><area alt="common_definitions_xsd_Complex_Type_dateIntervalType.tmp#dateIntervalType_endDate" href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType_endDate" coords="223,74,298,98" /><area alt="common_definitions_xsd_Complex_Type_dateIntervalType.tmp#dateIntervalType" href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType" coords="141,3,281,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component dateIntervalType')">dateIntervalType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_TimeOfUsePeriodType_effectivePeriod" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_TimeOfUsePeriodType_effectivePeriod');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_TimeOfUsePeriodType_effectivePeriod" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_TimeOfUsePeriodType_effectivePeriod" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_TimeOfUsePeriodType_effectivePeriod');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_TimeOfUsePeriodType_effectivePeriod" style="display:block"><b><a href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType_startDate" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component startDate')">startDate</a></b> , <b><a href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType_endDate" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component endDate{0,1}')">endDate{0,1}</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType_endDate" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component endDate')">endDate</a></b>, <b><a href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType_startDate" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component startDate')">startDate</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_TimeOfUsePeriodType_effectivePeriod" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('instance_TimeOfUsePeriodType_effectivePeriod');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_TimeOfUsePeriodType_effectivePeriod" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;effectivePeriod</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;startDate</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/startDate&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;endDate</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/endDate&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/effectivePeriod&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_TimeOfUsePeriodType_effectivePeriod" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_TimeOfUsePeriodType_effectivePeriod');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_TimeOfUsePeriodType_effectivePeriod" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"effectivePeriod"</span><span class="tAN"> type=</span><span class="tAV">"dateIntervalType"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/time_of_use_periods.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="TimeOfUsePeriodType_RatePeriodNrNonHolidays"></a><div class="componentTitle">Element <span class="qname"><b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component TimeOfUsePeriodType')">TimeOfUsePeriodType</a></b> / RatePeriodNrNonHolidays</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_TimeOfUsePeriodType_RatePeriodNrNonHolidays" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_TimeOfUsePeriodType_RatePeriodNrNonHolidays');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_TimeOfUsePeriodType_RatePeriodNrNonHolidays" style="display:block"><img alt="Diagram" style="border:0" src="img/time_of_use_periods_xsd_Element_RatePeriodNrNonHolidays.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>restriction of <b>xs:int</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_TimeOfUsePeriodType_RatePeriodNrNonHolidays" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_TimeOfUsePeriodType_RatePeriodNrNonHolidays');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_TimeOfUsePeriodType_RatePeriodNrNonHolidays" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_TimeOfUsePeriodType_RatePeriodNrNonHolidays" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('facets_TimeOfUsePeriodType_RatePeriodNrNonHolidays');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_TimeOfUsePeriodType_RatePeriodNrNonHolidays" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">totalDigits</td>
+                                    <td style="width:30%"><b>2</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_TimeOfUsePeriodType_RatePeriodNrNonHolidays" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_TimeOfUsePeriodType_RatePeriodNrNonHolidays');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_TimeOfUsePeriodType_RatePeriodNrNonHolidays" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"RatePeriodNrNonHolidays"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the rate period id for the peak type applicable during non holidays.</span><span class="tI">
+        </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">The rate period id for the peak type applicable during non holidays</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:int"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:totalDigits</span><span class="tAN"> value=</span><span class="tAV">"2"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/time_of_use_periods.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="TimeOfUsePeriodType_RatePeriodNrHolidays"></a><div class="componentTitle">Element <span class="qname"><b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component TimeOfUsePeriodType')">TimeOfUsePeriodType</a></b> / RatePeriodNrHolidays</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_TimeOfUsePeriodType_RatePeriodNrHolidays" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_TimeOfUsePeriodType_RatePeriodNrHolidays');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_TimeOfUsePeriodType_RatePeriodNrHolidays" style="display:block"><img alt="Diagram" style="border:0" src="img/time_of_use_periods_xsd_Element_RatePeriodNrHolidays.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>restriction of <b>xs:int</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_TimeOfUsePeriodType_RatePeriodNrHolidays" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_TimeOfUsePeriodType_RatePeriodNrHolidays');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_TimeOfUsePeriodType_RatePeriodNrHolidays" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">nillable</td>
+                                    <td><b>false</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_TimeOfUsePeriodType_RatePeriodNrHolidays" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('facets_TimeOfUsePeriodType_RatePeriodNrHolidays');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_TimeOfUsePeriodType_RatePeriodNrHolidays" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">totalDigits</td>
+                                    <td style="width:30%"><b>2</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_TimeOfUsePeriodType_RatePeriodNrHolidays" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_TimeOfUsePeriodType_RatePeriodNrHolidays');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_TimeOfUsePeriodType_RatePeriodNrHolidays" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"RatePeriodNrHolidays"</span><span class="tAN"> nillable=</span><span class="tAV">"false"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the rate period id for the peak type applicable during holidays</span><span class="tI">
+        </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the rate period id for the peak type applicable during holidays</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:int"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:totalDigits</span><span class="tAN"> value=</span><span class="tAV">"2"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/time_of_use_periods.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="TimeOfUsePeriodType_dayType"></a><div class="componentTitle">Element <span class="qname"><b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component TimeOfUsePeriodType')">TimeOfUsePeriodType</a></b> / dayType</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_TimeOfUsePeriodType_dayType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_TimeOfUsePeriodType_dayType');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_TimeOfUsePeriodType_dayType" style="display:block"><img alt="Diagram" style="border:0" src="img/time_of_use_periods_xsd_Element_dayType.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>restriction of <b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_TimeOfUsePeriodType_dayType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_TimeOfUsePeriodType_dayType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_TimeOfUsePeriodType_dayType" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_TimeOfUsePeriodType_dayType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('facets_TimeOfUsePeriodType_dayType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_TimeOfUsePeriodType_dayType" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">whiteSpace</td>
+                                    <td style="width:30%"><b>collapse</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">maxLength</td>
+                                    <td style="width:30%"><b>7</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>weekend</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>weekday</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>all</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_TimeOfUsePeriodType_dayType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_TimeOfUsePeriodType_dayType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_TimeOfUsePeriodType_dayType" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"dayType"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">whether the rate period is applicable to a "weekend" or "weekday" or in case it's applicable to both to "all"</span><span class="tI">
+        </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">whether the rate period is applicable to a "weekend" or "weekday" or in case it's applicable to both to "all"</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:maxLength</span><span class="tAN"> value=</span><span class="tAV">"7"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:whiteSpace</span><span class="tAN"> value=</span><span class="tAV">"collapse"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"weekend"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"weekday"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"all"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/time_of_use_periods.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="TimeOfUsePeriodType_peakType"></a><div class="componentTitle">Element <span class="qname"><b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component TimeOfUsePeriodType')">TimeOfUsePeriodType</a></b> / peakType</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_TimeOfUsePeriodType_peakType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_TimeOfUsePeriodType_peakType');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_TimeOfUsePeriodType_peakType" style="display:block"><img alt="Diagram" style="border:0" src="img/time_of_use_periods_xsd_Element_peakType.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>restriction of <b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_TimeOfUsePeriodType_peakType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_TimeOfUsePeriodType_peakType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_TimeOfUsePeriodType_peakType" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_TimeOfUsePeriodType_peakType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('facets_TimeOfUsePeriodType_peakType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_TimeOfUsePeriodType_peakType" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">maxLength</td>
+                                    <td style="width:30%"><b>30</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>base</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>mid</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>peak</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>offpeak</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>shoulderpeak</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>superpeak</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_TimeOfUsePeriodType_peakType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_TimeOfUsePeriodType_peakType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_TimeOfUsePeriodType_peakType" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"peakType"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the name for the type of rate period (e.g. "base", "peak", "mid peak", "super peak", or "NA" for non-time varying rates)</span><span class="tI">
+        </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the name for the type of period, e.g "base", "peak", "mid peak", "super peak", use "NA" for non-time varying rates</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:maxLength</span><span class="tAN"> value=</span><span class="tAV">"30"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"base"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"mid"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"peak"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"offpeak"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"shoulderpeak"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"superpeak"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/time_of_use_periods.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="TimeOfUsePeriodType_appliesOnHolidays"></a><div class="componentTitle">Element <span class="qname"><b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component TimeOfUsePeriodType')">TimeOfUsePeriodType</a></b> / appliesOnHolidays</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_TimeOfUsePeriodType_appliesOnHolidays" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_TimeOfUsePeriodType_appliesOnHolidays');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_TimeOfUsePeriodType_appliesOnHolidays" style="display:block"><img alt="Diagram" style="border:0" src="img/time_of_use_periods_xsd_Element_appliesOnHolidays.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:boolean</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_TimeOfUsePeriodType_appliesOnHolidays" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_TimeOfUsePeriodType_appliesOnHolidays');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_TimeOfUsePeriodType_appliesOnHolidays" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_TimeOfUsePeriodType_appliesOnHolidays" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_TimeOfUsePeriodType_appliesOnHolidays');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_TimeOfUsePeriodType_appliesOnHolidays" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"appliesOnHolidays"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">boolean indicating whether or not this rate period applies on holidays or whether it has the peak type of a different rate period if it's a holiday.</span><span class="tI">
+        </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">whether or not this rate period applies on holidays or whether it has an alternate applicable peak type if it's a holiday</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:boolean"</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/time_of_use_periods.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="TimeOfUsePeriodType_timeStart"></a><div class="componentTitle">Element <span class="qname"><b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component TimeOfUsePeriodType')">TimeOfUsePeriodType</a></b> / timeStart</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_TimeOfUsePeriodType_timeStart" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_TimeOfUsePeriodType_timeStart');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_TimeOfUsePeriodType_timeStart" style="display:block"><img alt="Diagram" style="border:0" src="img/time_of_use_periods_xsd_Element_timeStart.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:time</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_TimeOfUsePeriodType_timeStart" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_TimeOfUsePeriodType_timeStart');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_TimeOfUsePeriodType_timeStart" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_TimeOfUsePeriodType_timeStart" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_TimeOfUsePeriodType_timeStart');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_TimeOfUsePeriodType_timeStart" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"timeStart"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the time of day on and after which a given rate period is applicable,as hours and minutes in 24 hour format, formatted as [hh]:[mm]:[ss] (i.e."16:00" for a 4-7pm rate period)</span><span class="tI">
+        </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">The time of day on and after which a given rate period is applicable, in ISO8601 format as hours and minutes in 24 hour format, formatted as T[hh]:[mm]:[ss]. The timezone for all New York state rate plans is EDT or EST depending on the date.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:time"</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/time_of_use_periods.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="TimeOfUsePeriodType_timeEnd"></a><div class="componentTitle">Element <span class="qname"><b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component TimeOfUsePeriodType')">TimeOfUsePeriodType</a></b> / timeEnd</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_TimeOfUsePeriodType_timeEnd" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_TimeOfUsePeriodType_timeEnd');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_TimeOfUsePeriodType_timeEnd" style="display:block"><img alt="Diagram" style="border:0" src="img/time_of_use_periods_xsd_Element_timeEnd.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:time</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_TimeOfUsePeriodType_timeEnd" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_TimeOfUsePeriodType_timeEnd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_TimeOfUsePeriodType_timeEnd" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_TimeOfUsePeriodType_timeEnd" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_TimeOfUsePeriodType_timeEnd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_TimeOfUsePeriodType_timeEnd" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"timeEnd"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the time of day in hours and minutes in 24 hour format up to (but not including) which a given rate period is applicable, as hours and minutes in 24 hour format, formatted as [hh]:[mm]:[ss] (i.e. "19:00" for a 4-7pm rate period)</span><span class="tI">
+        </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">The time of day in hours and minutes in 24 hour format up to (but not including) which a given rate period is applicable, in ISO8601 format as hours and minutes in 24 hour format, formatted as [hh]:[mm]:[ss] The timezone for all New York state rate plans is EDT or EST depending on the date.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:time"</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/time_of_use_periods.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="TimeOfUsePeriodType_chargesComponent"></a><div class="componentTitle">Element <span class="qname"><b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component TimeOfUsePeriodType')">TimeOfUsePeriodType</a></b> / chargesComponent</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_TimeOfUsePeriodType_chargesComponent" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('annotations_TimeOfUsePeriodType_chargesComponent');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_TimeOfUsePeriodType_chargesComponent" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td style="width:100%">
+                                          <pre><span class="tT">whether the time of use period schedule is for the Delivery, Supply, or Export component of the charges on a bill.</span><span class="tI">
+</span><span class="tT">TODO: make this a common definition to re-use in charges.xsd and other purposes</span></pre>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_TimeOfUsePeriodType_chargesComponent" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_TimeOfUsePeriodType_chargesComponent');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_TimeOfUsePeriodType_chargesComponent" style="display:block"><img alt="Diagram" style="border:0" src="img/time_of_use_periods_xsd_Element_chargesComponent.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_TimeOfUsePeriodType_chargesComponent" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_TimeOfUsePeriodType_chargesComponent');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_TimeOfUsePeriodType_chargesComponent" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"chargesComponent"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">whether the time of use period schedule is for the Delivery, Supply, or Export component of the charges on a bill. TODO: make this a common definition to re-use in charges.xsd and other purposes</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/time_of_use_periods.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="TimeOfUsePeriodType_measurementApplicable"></a><div class="componentTitle">Element <span class="qname"><b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component TimeOfUsePeriodType')">TimeOfUsePeriodType</a></b> / measurementApplicable</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_TimeOfUsePeriodType_measurementApplicable" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_TimeOfUsePeriodType_measurementApplicable');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_TimeOfUsePeriodType_measurementApplicable" style="display:block"><img alt="Diagram" style="border:0" src="img/time_of_use_periods_xsd_Element_measurementApplicable.jpeg" usemap="#time_of_use_periods_xsd_Element_measurementApplicable" /><map name="time_of_use_periods_xsd_Element_measurementApplicable" id="time_of_use_periods_xsd_Element_measurementApplicable"><area alt="common_definitions_xsd_Simple_Type_measurementKind.tmp#measurementKind" href="common_definitions_xsd_Simple_Type_measurementKind.html#measurementKind" coords="188,0,340,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="common_definitions_xsd_Simple_Type_measurementKind.html#measurementKind" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementKind')">measurementKind</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_TimeOfUsePeriodType_measurementApplicable" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_TimeOfUsePeriodType_measurementApplicable');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_TimeOfUsePeriodType_measurementApplicable" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_TimeOfUsePeriodType_measurementApplicable" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('facets_TimeOfUsePeriodType_measurementApplicable');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_TimeOfUsePeriodType_measurementApplicable" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>apparentPowerFactor</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>batteryCarryover</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>batteryVoltage</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>demand</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>demandLimit</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>distance</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>energy</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>frequency</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>phasorPowerFactor</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>phasorReactivePower</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>power</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>powerFactor</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>powerQuality</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>voltage</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>volumetricFlow</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b></b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_TimeOfUsePeriodType_measurementApplicable" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_TimeOfUsePeriodType_measurementApplicable');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_TimeOfUsePeriodType_measurementApplicable" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"measurementApplicable"</span><span class="tAN"> type=</span><span class="tAV">"measurementKind"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/time_of_use_periods.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="TimeOfUsePeriodType"></a><div class="componentTitle">Complex Type <span class="qname">TimeOfUsePeriodType</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_TimeOfUsePeriodType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_TimeOfUsePeriodType');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_TimeOfUsePeriodType" style="display:block"><img alt="Diagram" style="border:0" src="img/time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.jpeg" usemap="#time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType" /><map name="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType" id="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType"><area alt="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.tmp#TimeOfUsePeriodType_effectivePeriod" href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_effectivePeriod" coords="273,0,383,24" /><area alt="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.tmp#TimeOfUsePeriodType_RatePeriodNrNonHolidays" href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_RatePeriodNrNonHolidays" coords="273,34,442,58" /><area alt="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.tmp#TimeOfUsePeriodType_RatePeriodNrHolidays" href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_RatePeriodNrHolidays" coords="273,68,420,92" /><area alt="common_definitions_xsd_Element_seasonName.tmp#seasonName" href="common_definitions_xsd_Element_seasonName.html#seasonName" coords="273,102,372,126" /><area alt="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.tmp#TimeOfUsePeriodType_dayType" href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_dayType" coords="273,136,349,160" /><area alt="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.tmp#TimeOfUsePeriodType_peakType" href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_peakType" coords="273,170,355,194" /><area alt="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.tmp#TimeOfUsePeriodType_appliesOnHolidays" href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_appliesOnHolidays" coords="273,204,404,228" /><area alt="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.tmp#TimeOfUsePeriodType_timeStart" href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_timeStart" coords="273,238,352,262" /><area alt="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.tmp#TimeOfUsePeriodType_timeEnd" href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_timeEnd" coords="273,272,347,296" /><area alt="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.tmp#TimeOfUsePeriodType_chargesComponent" href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_chargesComponent" coords="273,306,399,330" /><area alt="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.tmp#TimeOfUsePeriodType_measurementApplicable" href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_measurementApplicable" coords="273,340,433,364" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_TimeOfUsePeriodType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_TimeOfUsePeriodType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_TimeOfUsePeriodType" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="time_of_use_periods_xsd_Element_timeOfUsePeriods.html#timeOfUsePeriods_timeOfUsePeriod" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component timeOfUsePeriods/timeOfUsePeriod')">timeOfUsePeriods/timeOfUsePeriod</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_TimeOfUsePeriodType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_TimeOfUsePeriodType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_TimeOfUsePeriodType" style="display:block"><b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_effectivePeriod" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component effectivePeriod')">effectivePeriod</a></b> , <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_RatePeriodNrNonHolidays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component RatePeriodNrNonHolidays')">RatePeriodNrNonHolidays</a></b> , <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_RatePeriodNrHolidays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component RatePeriodNrHolidays')">RatePeriodNrHolidays</a></b> , <b><a href="common_definitions_xsd_Element_seasonName.html#seasonName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component seasonName')">seasonName</a></b> , <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_dayType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component dayType')">dayType</a></b> , <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_peakType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component peakType')">peakType</a></b> , <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_appliesOnHolidays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component appliesOnHolidays')">appliesOnHolidays</a></b> , <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_timeStart" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component timeStart')">timeStart</a></b> , <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_timeEnd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component timeEnd')">timeEnd</a></b> , <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_chargesComponent" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargesComponent')">chargesComponent</a></b> , <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_measurementApplicable" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementApplicable')">measurementApplicable</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_RatePeriodNrHolidays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component RatePeriodNrHolidays')">RatePeriodNrHolidays</a></b>, <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_RatePeriodNrNonHolidays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component RatePeriodNrNonHolidays')">RatePeriodNrNonHolidays</a></b>, <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_appliesOnHolidays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component appliesOnHolidays')">appliesOnHolidays</a></b>, <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_chargesComponent" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargesComponent')">chargesComponent</a></b>, <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_dayType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component dayType')">dayType</a></b>, <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_effectivePeriod" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component effectivePeriod')">effectivePeriod</a></b>, <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_measurementApplicable" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementApplicable')">measurementApplicable</a></b>, <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_peakType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component peakType')">peakType</a></b>, <b><a href="common_definitions_xsd_Element_seasonName.html#seasonName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component seasonName')">seasonName</a></b>, <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_timeEnd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component timeEnd')">timeEnd</a></b>, <b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType_timeStart" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component timeStart')">timeStart</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_TimeOfUsePeriodType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_TimeOfUsePeriodType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_TimeOfUsePeriodType" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:complexType</span><span class="tAN"> name=</span><span class="tAV">"TimeOfUsePeriodType"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"effectivePeriod"</span><span class="tAN"> type=</span><span class="tAV">"dateIntervalType"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"RatePeriodNrNonHolidays"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the rate period id for the peak type applicable during non holidays.</span><span class="tI">
+            </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">The rate period id for the peak type applicable during non holidays</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:int"</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:totalDigits</span><span class="tAN"> value=</span><span class="tAV">"2"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"RatePeriodNrHolidays"</span><span class="tAN"> nillable=</span><span class="tAV">"false"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the rate period id for the peak type applicable during holidays</span><span class="tI">
+            </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the rate period id for the peak type applicable during holidays</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:int"</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:totalDigits</span><span class="tAN"> value=</span><span class="tAV">"2"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"seasonName"</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"dayType"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">whether the rate period is applicable to a "weekend" or "weekday" or in case it's applicable to both to "all"</span><span class="tI">
+            </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">whether the rate period is applicable to a "weekend" or "weekday" or in case it's applicable to both to "all"</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:maxLength</span><span class="tAN"> value=</span><span class="tAV">"7"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:whiteSpace</span><span class="tAN"> value=</span><span class="tAV">"collapse"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"weekend"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"weekday"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"all"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"peakType"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the name for the type of rate period (e.g. "base", "peak", "mid peak", "super peak", or "NA" for non-time varying rates)</span><span class="tI">
+            </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the name for the type of period, e.g "base", "peak", "mid peak", "super peak", use "NA" for non-time varying rates</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:maxLength</span><span class="tAN"> value=</span><span class="tAV">"30"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"base"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"mid"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"peak"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"offpeak"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"shoulderpeak"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"superpeak"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"appliesOnHolidays"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">boolean indicating whether or not this rate period applies on holidays or whether it has the peak type of a different rate period if it's a holiday.</span><span class="tI">
+            </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">whether or not this rate period applies on holidays or whether it has an alternate applicable peak type if it's a holiday</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:boolean"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"timeStart"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the time of day on and after which a given rate period is applicable,as hours and minutes in 24 hour format, formatted as [hh]:[mm]:[ss] (i.e."16:00" for a 4-7pm rate period)</span><span class="tI">
+            </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">The time of day on and after which a given rate period is applicable, in ISO8601 format as hours and minutes in 24 hour format, formatted as T[hh]:[mm]:[ss]. The timezone for all New York state rate plans is EDT or EST depending on the date.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:time"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"timeEnd"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the time of day in hours and minutes in 24 hour format up to (but not including) which a given rate period is applicable, as hours and minutes in 24 hour format, formatted as [hh]:[mm]:[ss] (i.e. "19:00" for a 4-7pm rate period)</span><span class="tI">
+            </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">The time of day in hours and minutes in 24 hour format up to (but not including) which a given rate period is applicable, in ISO8601 format as hours and minutes in 24 hour format, formatted as [hh]:[mm]:[ss] The timezone for all New York state rate plans is EDT or EST depending on the date.</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:time"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"chargesComponent"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">whether the time of use period schedule is for the Delivery, Supply, or Export component of the charges on a bill. TODO: make this a common definition to re-use in charges.xsd and other purposes</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"measurementApplicable"</span><span class="tAN"> type=</span><span class="tAV">"measurementKind"</span><span class="tEl">/&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:complexType&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/time_of_use_periods.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr />
+         <div style="text-align:center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor Trial Edition.</div>
+      </div><script type="text/javascript"><!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>

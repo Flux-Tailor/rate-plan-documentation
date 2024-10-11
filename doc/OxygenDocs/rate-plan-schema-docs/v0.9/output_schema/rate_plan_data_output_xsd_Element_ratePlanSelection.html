@@ -1,0 +1,1643 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for component ratePlanSelection</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript"><!--
+        var propertiesBoxes= new Array('properties_ratePlanSelection', 
+				'properties_ratePlanSelection_deliveryCharges', 
+				'properties_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges', 
+				'properties_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge', 
+				'properties_ratePlanSelection_supplyCharges', 
+				'properties_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges', 
+				'properties_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge', 
+				'properties_ratePlanSelection_exportCredits', 
+				'properties_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit', 
+				'properties_ratePlanSelection_otherCharges');
+var usedByBoxes= new Array('usedBy_ratePlanSelection');
+var sourceBoxes= new Array('source_ratePlanSelection', 
+				'source_ratePlanSelection_deliveryCharges', 
+				'source_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges', 
+				'source_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge', 
+				'source_ratePlanSelection_supplyCharges', 
+				'source_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges', 
+				'source_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge', 
+				'source_ratePlanSelection_exportCredits', 
+				'source_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit', 
+				'source_ratePlanSelection_otherCharges');
+var instanceBoxes= new Array('instance_ratePlanSelection', 
+				'instance_ratePlanSelection_deliveryCharges', 
+				'instance_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges', 
+				'instance_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge', 
+				'instance_ratePlanSelection_supplyCharges', 
+				'instance_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges', 
+				'instance_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge', 
+				'instance_ratePlanSelection_exportCredits', 
+				'instance_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit', 
+				'instance_ratePlanSelection_otherCharges');
+var diagramBoxes= new Array('diagram_ratePlanSelection', 
+				'diagram_ratePlanSelection_deliveryCharges', 
+				'diagram_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges', 
+				'diagram_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge', 
+				'diagram_ratePlanSelection_supplyCharges', 
+				'diagram_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges', 
+				'diagram_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge', 
+				'diagram_ratePlanSelection_exportCredits', 
+				'diagram_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit', 
+				'diagram_ratePlanSelection_otherCharges');
+var modelBoxes= new Array('model_ratePlanSelection', 
+				'model_ratePlanSelection_deliveryCharges', 
+				'model_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges', 
+				'model_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge', 
+				'model_ratePlanSelection_supplyCharges', 
+				'model_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges', 
+				'model_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge', 
+				'model_ratePlanSelection_exportCredits', 
+				'model_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit', 
+				'model_ratePlanSelection_otherCharges');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, diagramBoxes);" class="control" /></span><span class="globalControlName">Diagrams</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, instanceBoxes);" class="control" /></span><span class="globalControlName">Instances</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, modelBoxes);" class="control" /></span><span class="globalControlName">Model </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
+                     </tr>
+                  </table>
+                  <div style="text-align:center"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+               </td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div><a id="ratePlanSelection"></a><div class="componentTitle">Element <span class="qname">ratePlanSelection</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_ratePlanSelection" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_ratePlanSelection');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_ratePlanSelection" style="display:block"><img alt="Diagram" style="border:0" src="img/rate_plan_data_output_xsd_Element_ratePlanSelection.jpeg" usemap="#rate_plan_data_output_xsd_Element_ratePlanSelection" /><map name="rate_plan_data_output_xsd_Element_ratePlanSelection" id="rate_plan_data_output_xsd_Element_ratePlanSelection"><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_ratePlanIedrOrgAbbreviation" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanIedrOrgAbbreviation" coords="346,42,531,66" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_tariffUtilityName" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_tariffUtilityName" coords="346,76,464,100" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_tariffUtilityPscNumber" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_tariffUtilityPscNumber" coords="346,110,495,134" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_tariffBookLeafRanges" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_tariffBookLeafRanges" coords="346,144,490,168" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_dateDraftUpdate" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_dateDraftUpdate" coords="346,178,465,202" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_dateEffective" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_dateEffective" coords="346,212,445,236" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_dateCancellation" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_dateCancellation" coords="346,246,466,270" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_serviceClassNumber" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_serviceClassNumber" coords="346,280,487,304" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_serviceClassName" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_serviceClassName" coords="346,314,474,338" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_rateCode" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_rateCode" coords="346,348,426,372" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_ratePlanTariffId" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanTariffId" coords="346,382,459,406" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_ratePlanName" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanName" coords="346,416,450,440" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_service" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_service" coords="346,450,415,474" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_customerClass" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_customerClass" coords="346,484,457,508" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_ratePlanTerritory" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanTerritory" coords="346,518,468,542" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_ratePlanDescription" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanDescription" coords="346,552,482,576" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_tariffDpsCaseNumber" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_tariffDpsCaseNumber" coords="346,586,493,610" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_ratePlanHasRetailSupply" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasRetailSupply" coords="346,620,505,644" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_ratePlanHasTieredBlocks" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasTieredBlocks" coords="346,654,508,678" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_ratePlanHasDemandCharges" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasDemandCharges" coords="346,688,529,712" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_ratePlanHasIcapTag" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasIcapTag" coords="346,722,482,746" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_ratePlanHasReactivePower" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasReactivePower" coords="346,756,516,780" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_ratePlanHasTimeOfUsePricing" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasTimeOfUsePricing" coords="346,790,536,814" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_ratePlanIsRateRider" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanIsRateRider" coords="346,824,480,848" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType_ratePlanNumberRatePeriods" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanNumberRatePeriods" coords="346,858,526,882" /><area alt="rate_plans_xsd_Complex_Type_RatePlanType.tmp#RatePlanType" href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType" coords="243,5,457,27" /><area alt="eligibility_xsd_Element_eligibility.tmp#eligibility" href="eligibility_xsd_Element_eligibility.html#eligibility" coords="311,899,390,923" /><area alt="seasons_xsd_Element_seasons.tmp#seasons" href="seasons_xsd_Element_seasons.html#seasons" coords="311,933,386,957" /><area alt="holidays_xsd_Element_holidays.tmp#holidays" href="holidays_xsd_Element_holidays.html#holidays" coords="311,967,387,991" /><area alt="time_of_use_periods_xsd_Element_timeOfUsePeriods.tmp#timeOfUsePeriods" href="time_of_use_periods_xsd_Element_timeOfUsePeriods.html#timeOfUsePeriods" coords="311,1001,438,1025" /><area alt="service_tier_thresholds_xsd_Element_serviceTierThresholds.tmp#serviceTierThresholds" href="service_tier_thresholds_xsd_Element_serviceTierThresholds.html#serviceTierThresholds" coords="311,1035,462,1059" /><area alt="rate_plan_data_output_xsd_Element_ratePlanSelection.tmp#ratePlanSelection_deliveryCharges" href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_deliveryCharges" coords="311,1069,429,1093" /><area alt="rate_plan_data_output_xsd_Element_ratePlanSelection.tmp#ratePlanSelection_supplyCharges" href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_supplyCharges" coords="311,1103,423,1127" /><area alt="rate_plan_data_output_xsd_Element_ratePlanSelection.tmp#ratePlanSelection_exportCredits" href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_exportCredits" coords="311,1137,417,1161" /><area alt="rate_plan_data_output_xsd_Element_ratePlanSelection.tmp#ratePlanSelection_otherCharges" href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_otherCharges" coords="311,1171,416,1195" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>extension of <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component RatePlanType')">RatePlanType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type hierarchy</b></td>
+                        <td>
+                           <ul class="internal">
+                              <li class="internal"><b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component RatePlanType')">RatePlanType</a></b></li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_ratePlanSelection" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_ratePlanSelection');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_ratePlanSelection" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_ratePlanSelection" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_ratePlanSelection');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_ratePlanSelection" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="rate_plan_data_output_xsd_Element_ratePlanScenario.html#ratePlanScenario" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanScenario')">ratePlanScenario</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_ratePlanSelection" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_ratePlanSelection');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_ratePlanSelection" style="display:block"><b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanIedrOrgAbbreviation" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanIedrOrgAbbreviation')">ratePlanIedrOrgAbbreviation</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_tariffUtilityName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component tariffUtilityName')">tariffUtilityName</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_tariffUtilityPscNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component tariffUtilityPscNumber')">tariffUtilityPscNumber</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_tariffBookLeafRanges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component tariffBookLeafRanges')">tariffBookLeafRanges</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_dateDraftUpdate" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component dateDraftUpdate{0,1}')">dateDraftUpdate{0,1}</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_dateEffective" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component dateEffective')">dateEffective</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_dateCancellation" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component dateCancellation{0,1}')">dateCancellation{0,1}</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_serviceClassNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceClassNumber')">serviceClassNumber</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_serviceClassName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceClassName')">serviceClassName</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_rateCode" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component rateCode')">rateCode</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanTariffId" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanTariffId{0,1}')">ratePlanTariffId{0,1}</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanName')">ratePlanName</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_service" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component service')">service</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_customerClass" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component customerClass+')">customerClass+</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanTerritory" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanTerritory*')">ratePlanTerritory*</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanDescription" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanDescription')">ratePlanDescription</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_tariffDpsCaseNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component tariffDpsCaseNumber')">tariffDpsCaseNumber</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasRetailSupply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanHasRetailSupply{0,1}')">ratePlanHasRetailSupply{0,1}</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasTieredBlocks" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanHasTieredBlocks{0,1}')">ratePlanHasTieredBlocks{0,1}</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasDemandCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanHasDemandCharges{0,1}')">ratePlanHasDemandCharges{0,1}</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasIcapTag" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanHasIcapTag{0,1}')">ratePlanHasIcapTag{0,1}</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasReactivePower" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanHasReactivePower{0,1}')">ratePlanHasReactivePower{0,1}</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasTimeOfUsePricing" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanHasTimeOfUsePricing{0,1}')">ratePlanHasTimeOfUsePricing{0,1}</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanIsRateRider" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanIsRateRider{0,1}')">ratePlanIsRateRider{0,1}</a></b> , <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanNumberRatePeriods" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanNumberRatePeriods')">ratePlanNumberRatePeriods</a></b> , <b><a href="eligibility_xsd_Element_eligibility.html#eligibility" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component eligibility{0,1}')">eligibility{0,1}</a></b> , <b><a href="seasons_xsd_Element_seasons.html#seasons" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component seasons{0,1}')">seasons{0,1}</a></b> , <b><a href="holidays_xsd_Element_holidays.html#holidays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component holidays{0,1}')">holidays{0,1}</a></b> , <b><a href="time_of_use_periods_xsd_Element_timeOfUsePeriods.html#timeOfUsePeriods" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component timeOfUsePeriods')">timeOfUsePeriods</a></b> , <b><a href="service_tier_thresholds_xsd_Element_serviceTierThresholds.html#serviceTierThresholds" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceTierThresholds{0,1}')">serviceTierThresholds{0,1}</a></b> , <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_deliveryCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component deliveryCharges')">deliveryCharges</a></b> , <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_supplyCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component supplyCharges{0,1}')">supplyCharges{0,1}</a></b> , <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_exportCredits" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component exportCredits{0,1}')">exportCredits{0,1}</a></b> , <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_otherCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component otherCharges{0,1}')">otherCharges{0,1}</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_customerClass" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component customerClass')">customerClass</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_dateCancellation" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component dateCancellation')">dateCancellation</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_dateDraftUpdate" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component dateDraftUpdate')">dateDraftUpdate</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_dateEffective" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component dateEffective')">dateEffective</a></b>, <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_deliveryCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component deliveryCharges')">deliveryCharges</a></b>, <b><a href="eligibility_xsd_Element_eligibility.html#eligibility" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component eligibility')">eligibility</a></b>, <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_exportCredits" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component exportCredits')">exportCredits</a></b>, <b><a href="holidays_xsd_Element_holidays.html#holidays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component holidays')">holidays</a></b>, <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_otherCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component otherCharges')">otherCharges</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_rateCode" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component rateCode')">rateCode</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanDescription" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanDescription')">ratePlanDescription</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasDemandCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanHasDemandCharges')">ratePlanHasDemandCharges</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasIcapTag" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanHasIcapTag')">ratePlanHasIcapTag</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasReactivePower" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanHasReactivePower')">ratePlanHasReactivePower</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasRetailSupply" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanHasRetailSupply')">ratePlanHasRetailSupply</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasTieredBlocks" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanHasTieredBlocks')">ratePlanHasTieredBlocks</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanHasTimeOfUsePricing" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanHasTimeOfUsePricing')">ratePlanHasTimeOfUsePricing</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanIedrOrgAbbreviation" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanIedrOrgAbbreviation')">ratePlanIedrOrgAbbreviation</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanIsRateRider" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanIsRateRider')">ratePlanIsRateRider</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanName')">ratePlanName</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanNumberRatePeriods" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanNumberRatePeriods')">ratePlanNumberRatePeriods</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanTariffId" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanTariffId')">ratePlanTariffId</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_ratePlanTerritory" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanTerritory')">ratePlanTerritory</a></b>, <b><a href="seasons_xsd_Element_seasons.html#seasons" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component seasons')">seasons</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_service" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component service')">service</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_serviceClassName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceClassName')">serviceClassName</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_serviceClassNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceClassNumber')">serviceClassNumber</a></b>, <b><a href="service_tier_thresholds_xsd_Element_serviceTierThresholds.html#serviceTierThresholds" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceTierThresholds')">serviceTierThresholds</a></b>, <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_supplyCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component supplyCharges')">supplyCharges</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_tariffBookLeafRanges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component tariffBookLeafRanges')">tariffBookLeafRanges</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_tariffDpsCaseNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component tariffDpsCaseNumber')">tariffDpsCaseNumber</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_tariffUtilityName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component tariffUtilityName')">tariffUtilityName</a></b>, <b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType_tariffUtilityPscNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component tariffUtilityPscNumber')">tariffUtilityPscNumber</a></b>, <b><a href="time_of_use_periods_xsd_Element_timeOfUsePeriods.html#timeOfUsePeriods" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component timeOfUsePeriods')">timeOfUsePeriods</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_ratePlanSelection" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('instance_ratePlanSelection');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_ratePlanSelection" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;ratePlanSelection</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePlanIedrOrgAbbreviation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/ratePlanIedrOrgAbbreviation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;tariffUtilityName</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/tariffUtilityName&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;tariffUtilityPscNumber</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/tariffUtilityPscNumber&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;tariffBookLeafRanges</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/tariffBookLeafRanges&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;dateDraftUpdate</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/dateDraftUpdate&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;dateEffective</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/dateEffective&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;dateCancellation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/dateCancellation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;serviceClassNumber</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/serviceClassNumber&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;serviceClassName</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/serviceClassName&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;rateCode</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/rateCode&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePlanTariffId</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/ratePlanTariffId&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePlanName</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/ratePlanName&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;service</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/service&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;customerClass</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,unbounded}</span><span class="tEl">&lt;/customerClass&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePlanTerritory</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,unbounded}</span><span class="tEl">&lt;/ratePlanTerritory&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePlanDescription</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/ratePlanDescription&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;tariffDpsCaseNumber</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/tariffDpsCaseNumber&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePlanHasRetailSupply</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/ratePlanHasRetailSupply&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePlanHasTieredBlocks</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/ratePlanHasTieredBlocks&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePlanHasDemandCharges</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/ratePlanHasDemandCharges&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePlanHasIcapTag</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/ratePlanHasIcapTag&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePlanHasReactivePower</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/ratePlanHasReactivePower&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePlanHasTimeOfUsePricing</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/ratePlanHasTimeOfUsePricing&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePlanIsRateRider</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/ratePlanIsRateRider&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePlanNumberRatePeriods</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/ratePlanNumberRatePeriods&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;eligibility</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/eligibility&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;seasons</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/seasons&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;holidays</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/holidays&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;timeOfUsePeriods</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/timeOfUsePeriods&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;serviceTierThresholds</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/serviceTierThresholds&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;deliveryCharges</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/deliveryCharges&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;supplyCharges</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/supplyCharges&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;exportCredits</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/exportCredits&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;otherCharges</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/otherCharges&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/ratePlanSelection&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_ratePlanSelection" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_ratePlanSelection');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_ratePlanSelection" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"ratePlanSelection"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:complexContent</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:extension</span><span class="tAN"> base=</span><span class="tAV">"RatePlanType"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:element</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> ref=</span><span class="tAV">"eligibility"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:element</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> ref=</span><span class="tAV">"seasons"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:element</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> ref=</span><span class="tAV">"holidays"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"timeOfUsePeriods"</span><span class="tAN"> minOccurs=</span><span class="tAV">"1"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"1"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:element</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> ref=</span><span class="tAV">"serviceTierThresholds"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"deliveryCharges"</span><span class="tEl">&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"minimumCharges"</span><span class="tEl">/&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"otherFixedCharges"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">/&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:element</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"meteredDeliveryCharges"</span><span class="tEl">&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"1"</span><span class="tAN"> name=</span><span class="tAV">"meteredDeliveryCharge"</span><span class="tAN"> type=</span><span class="tAV">"chargeType"</span><span class="tEl">/&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"nonmeteredServiceCharges"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">/&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"supplyCharges"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"1"</span><span class="tAN"> name=</span><span class="tAV">"meteredSupplyCharges"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+                      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> name=</span><span class="tAV">"meteredSupplyCharge"</span><span class="tAN"> type=</span><span class="tAV">"chargeType"</span><span class="tEl">/&gt;</span><span class="tI">
+                    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+                  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"nonmeteredServiceCharges"</span><span class="tEl">/&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:element</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"exportCredits"</span><span class="tEl">&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> name=</span><span class="tAV">"exportCredit"</span><span class="tAN"> type=</span><span class="tAV">"chargeType"</span><span class="tEl">/&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"otherCharges"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+                </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> ref=</span><span class="tAV">"otherFixedCharges"</span><span class="tEl">/&gt;</span><span class="tI">
+              </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:extension&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:complexContent&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/rate_plan_data_output.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="ratePlanSelection_deliveryCharges"></a><div class="componentTitle">Element <span class="qname"><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanSelection')">ratePlanSelection</a></b> / deliveryCharges</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_ratePlanSelection_deliveryCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_ratePlanSelection_deliveryCharges');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_ratePlanSelection_deliveryCharges" style="display:block"><img alt="Diagram" style="border:0" src="img/rate_plan_data_output_xsd_Element_deliveryCharges.jpeg" usemap="#rate_plan_data_output_xsd_Element_deliveryCharges" /><map name="rate_plan_data_output_xsd_Element_deliveryCharges" id="rate_plan_data_output_xsd_Element_deliveryCharges"><area alt="minimum_charges_xsd_Element_minimumCharges.tmp#minimumCharges" href="minimum_charges_xsd_Element_minimumCharges.html#minimumCharges" coords="217,2,343,26" /><area alt="other_fixed_charges_xsd_Element_otherFixedCharges.tmp#otherFixedCharges" href="other_fixed_charges_xsd_Element_otherFixedCharges.html#otherFixedCharges" coords="217,36,351,60" /><area alt="rate_plan_data_output_xsd_Element_ratePlanSelection.tmp#ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges" href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges" coords="217,70,380,94" /><area alt="nonmetered_service_charges_xsd_Element_nonmeteredServiceCharges.tmp#nonmeteredServiceCharges" href="nonmetered_service_charges_xsd_Element_nonmeteredServiceCharges.html#nonmeteredServiceCharges" coords="217,104,396,128" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_ratePlanSelection_deliveryCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_ratePlanSelection_deliveryCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_ratePlanSelection_deliveryCharges" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_ratePlanSelection_deliveryCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_ratePlanSelection_deliveryCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_ratePlanSelection_deliveryCharges" style="display:block"><b><a href="minimum_charges_xsd_Element_minimumCharges.html#minimumCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component minimumCharges')">minimumCharges</a></b> , <b><a href="other_fixed_charges_xsd_Element_otherFixedCharges.html#otherFixedCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component otherFixedCharges{0,1}')">otherFixedCharges{0,1}</a></b> , <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component meteredDeliveryCharges{0,1}')">meteredDeliveryCharges{0,1}</a></b> , <b><a href="nonmetered_service_charges_xsd_Element_nonmeteredServiceCharges.html#nonmeteredServiceCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component nonmeteredServiceCharges{0,1}')">nonmeteredServiceCharges{0,1}</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component meteredDeliveryCharges')">meteredDeliveryCharges</a></b>, <b><a href="minimum_charges_xsd_Element_minimumCharges.html#minimumCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component minimumCharges')">minimumCharges</a></b>, <b><a href="nonmetered_service_charges_xsd_Element_nonmeteredServiceCharges.html#nonmeteredServiceCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component nonmeteredServiceCharges')">nonmeteredServiceCharges</a></b>, <b><a href="other_fixed_charges_xsd_Element_otherFixedCharges.html#otherFixedCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component otherFixedCharges')">otherFixedCharges</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_ratePlanSelection_deliveryCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('instance_ratePlanSelection_deliveryCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_ratePlanSelection_deliveryCharges" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;deliveryCharges</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;minimumCharges</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/minimumCharges&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;otherFixedCharges</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/otherFixedCharges&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;meteredDeliveryCharges</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/meteredDeliveryCharges&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;nonmeteredServiceCharges</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/nonmeteredServiceCharges&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/deliveryCharges&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_ratePlanSelection_deliveryCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_ratePlanSelection_deliveryCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_ratePlanSelection_deliveryCharges" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"deliveryCharges"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"minimumCharges"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"otherFixedCharges"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"meteredDeliveryCharges"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"1"</span><span class="tAN"> name=</span><span class="tAV">"meteredDeliveryCharge"</span><span class="tAN"> type=</span><span class="tAV">"chargeType"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"nonmeteredServiceCharges"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/rate_plan_data_output.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges"></a><div class="componentTitle">Element <span class="qname"><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanSelection')">ratePlanSelection</a></b> / <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_deliveryCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component deliveryCharges')">deliveryCharges</a></b> / meteredDeliveryCharges</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges" style="display:block"><img alt="Diagram" style="border:0" src="img/rate_plan_data_output_xsd_Element_meteredDeliveryCharges.jpeg" usemap="#rate_plan_data_output_xsd_Element_meteredDeliveryCharges" /><map name="rate_plan_data_output_xsd_Element_meteredDeliveryCharges" id="rate_plan_data_output_xsd_Element_meteredDeliveryCharges"><area alt="rate_plan_data_output_xsd_Element_ratePlanSelection.tmp#ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" coords="283,2,440,44" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges" style="display:block"><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component meteredDeliveryCharge+')">meteredDeliveryCharge+</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component meteredDeliveryCharge')">meteredDeliveryCharge</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('instance_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;meteredDeliveryCharges</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;meteredDeliveryCharge</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,unbounded}</span><span class="tEl">&lt;/meteredDeliveryCharge&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/meteredDeliveryCharges&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"meteredDeliveryCharges"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"1"</span><span class="tAN"> name=</span><span class="tAV">"meteredDeliveryCharge"</span><span class="tAN"> type=</span><span class="tAV">"chargeType"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/rate_plan_data_output.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge"></a><div class="componentTitle">Element <span class="qname"><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanSelection')">ratePlanSelection</a></b> / <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_deliveryCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component deliveryCharges')">deliveryCharges</a></b> / <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component meteredDeliveryCharges')">meteredDeliveryCharges</a></b> / meteredDeliveryCharge</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" style="display:block"><img alt="Diagram" style="border:0" src="img/rate_plan_data_output_xsd_Element_meteredDeliveryCharge.jpeg" usemap="#rate_plan_data_output_xsd_Element_meteredDeliveryCharge" /><map name="rate_plan_data_output_xsd_Element_meteredDeliveryCharge" id="rate_plan_data_output_xsd_Element_meteredDeliveryCharge"><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_servicePeriod" href="charges_xsd_Complex_Type_chargeType.html#chargeType_servicePeriod" coords="270,40,373,64" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_serviceTierNr" href="charges_xsd_Complex_Type_chargeType.html#chargeType_serviceTierNr" coords="270,74,373,98" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_ratePeriodNr" href="charges_xsd_Complex_Type_chargeType.html#chargeType_ratePeriodNr" coords="270,108,369,132" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_peakType" href="charges_xsd_Complex_Type_chargeType.html#chargeType_peakType" coords="270,142,352,166" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_month" href="charges_xsd_Complex_Type_chargeType.html#chargeType_month" coords="270,176,336,200" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_chargeName" href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeName" coords="270,210,368,234" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_description" href="charges_xsd_Complex_Type_chargeType.html#chargeType_description" coords="270,244,362,268" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_chargeValue" href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeValue" coords="270,278,367,302" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_uom" href="charges_xsd_Complex_Type_chargeType.html#chargeType_uom" coords="270,312,325,336" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_measurementDefinition" href="charges_xsd_Complex_Type_chargeType.html#chargeType_measurementDefinition" coords="270,346,426,370" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_chargesComponent" href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargesComponent" coords="270,380,407,404" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType" href="charges_xsd_Complex_Type_chargeType.html#chargeType" coords="188,3,302,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeType')">chargeType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>1</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>unbounded</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" style="display:block"><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_servicePeriod" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component servicePeriod')">servicePeriod</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_serviceTierNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceTierNr{0,1}')">serviceTierNr{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_ratePeriodNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePeriodNr{0,1}')">ratePeriodNr{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_peakType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component peakType{0,1}')">peakType{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_month" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component month{0,1}')">month{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeName')">chargeName</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component description{0,1}')">description{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeValue" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeValue')">chargeValue</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_uom" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component uom{0,1}')">uom{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_measurementDefinition" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementDefinition{0,1}')">measurementDefinition{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargesComponent" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargesComponent')">chargesComponent</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeName')">chargeName</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeValue" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeValue')">chargeValue</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargesComponent" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargesComponent')">chargesComponent</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component description')">description</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_measurementDefinition" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementDefinition')">measurementDefinition</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_month" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component month')">month</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_peakType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component peakType')">peakType</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_ratePeriodNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePeriodNr')">ratePeriodNr</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_servicePeriod" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component servicePeriod')">servicePeriod</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_serviceTierNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceTierNr')">serviceTierNr</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_uom" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component uom')">uom</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('instance_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;meteredDeliveryCharge</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;servicePeriod</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/servicePeriod&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;serviceTierNr</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/serviceTierNr&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePeriodNr</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/ratePeriodNr&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;peakType</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/peakType&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;month</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/month&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;chargeName</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/chargeName&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;description</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/description&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;chargeValue</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/chargeValue&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;uom</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/uom&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;measurementDefinition</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/measurementDefinition&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;chargesComponent</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/chargesComponent&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/meteredDeliveryCharge&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"1"</span><span class="tAN"> name=</span><span class="tAV">"meteredDeliveryCharge"</span><span class="tAN"> type=</span><span class="tAV">"chargeType"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/rate_plan_data_output.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="ratePlanSelection_supplyCharges"></a><div class="componentTitle">Element <span class="qname"><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanSelection')">ratePlanSelection</a></b> / supplyCharges</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_ratePlanSelection_supplyCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_ratePlanSelection_supplyCharges');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_ratePlanSelection_supplyCharges" style="display:block"><img alt="Diagram" style="border:0" src="img/rate_plan_data_output_xsd_Element_supplyCharges.jpeg" usemap="#rate_plan_data_output_xsd_Element_supplyCharges" /><map name="rate_plan_data_output_xsd_Element_supplyCharges" id="rate_plan_data_output_xsd_Element_supplyCharges"><area alt="rate_plan_data_output_xsd_Element_ratePlanSelection.tmp#ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges" href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges" coords="211,2,367,26" /><area alt="nonmetered_service_charges_xsd_Element_nonmeteredServiceCharges.tmp#nonmeteredServiceCharges" href="nonmetered_service_charges_xsd_Element_nonmeteredServiceCharges.html#nonmeteredServiceCharges" coords="211,36,390,60" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_ratePlanSelection_supplyCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_ratePlanSelection_supplyCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_ratePlanSelection_supplyCharges" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_ratePlanSelection_supplyCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_ratePlanSelection_supplyCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_ratePlanSelection_supplyCharges" style="display:block"><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component meteredSupplyCharges{0,1}')">meteredSupplyCharges{0,1}</a></b> , <b><a href="nonmetered_service_charges_xsd_Element_nonmeteredServiceCharges.html#nonmeteredServiceCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component nonmeteredServiceCharges')">nonmeteredServiceCharges</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component meteredSupplyCharges')">meteredSupplyCharges</a></b>, <b><a href="nonmetered_service_charges_xsd_Element_nonmeteredServiceCharges.html#nonmeteredServiceCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component nonmeteredServiceCharges')">nonmeteredServiceCharges</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_ratePlanSelection_supplyCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('instance_ratePlanSelection_supplyCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_ratePlanSelection_supplyCharges" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;supplyCharges</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;meteredSupplyCharges</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/meteredSupplyCharges&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;nonmeteredServiceCharges</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/nonmeteredServiceCharges&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/supplyCharges&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_ratePlanSelection_supplyCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_ratePlanSelection_supplyCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_ratePlanSelection_supplyCharges" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"supplyCharges"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"1"</span><span class="tAN"> name=</span><span class="tAV">"meteredSupplyCharges"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+            </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> name=</span><span class="tAV">"meteredSupplyCharge"</span><span class="tAN"> type=</span><span class="tAV">"chargeType"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"nonmeteredServiceCharges"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/rate_plan_data_output.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges"></a><div class="componentTitle">Element <span class="qname"><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanSelection')">ratePlanSelection</a></b> / <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_supplyCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component supplyCharges')">supplyCharges</a></b> / meteredSupplyCharges</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges" style="display:block"><img alt="Diagram" style="border:0" src="img/rate_plan_data_output_xsd_Element_meteredSupplyCharges.jpeg" usemap="#rate_plan_data_output_xsd_Element_meteredSupplyCharges" /><map name="rate_plan_data_output_xsd_Element_meteredSupplyCharges" id="rate_plan_data_output_xsd_Element_meteredSupplyCharges"><area alt="rate_plan_data_output_xsd_Element_ratePlanSelection.tmp#ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" coords="276,2,426,44" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>1</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges" style="display:block"><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component meteredSupplyCharge+')">meteredSupplyCharge+</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component meteredSupplyCharge')">meteredSupplyCharge</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('instance_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;meteredSupplyCharges</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;meteredSupplyCharge</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,unbounded}</span><span class="tEl">&lt;/meteredSupplyCharge&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/meteredSupplyCharges&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"1"</span><span class="tAN"> name=</span><span class="tAV">"meteredSupplyCharges"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> name=</span><span class="tAV">"meteredSupplyCharge"</span><span class="tAN"> type=</span><span class="tAV">"chargeType"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/rate_plan_data_output.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge"></a><div class="componentTitle">Element <span class="qname"><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanSelection')">ratePlanSelection</a></b> / <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_supplyCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component supplyCharges')">supplyCharges</a></b> / <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component meteredSupplyCharges')">meteredSupplyCharges</a></b> / meteredSupplyCharge</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" style="display:block"><img alt="Diagram" style="border:0" src="img/rate_plan_data_output_xsd_Element_meteredSupplyCharge.jpeg" usemap="#rate_plan_data_output_xsd_Element_meteredSupplyCharge" /><map name="rate_plan_data_output_xsd_Element_meteredSupplyCharge" id="rate_plan_data_output_xsd_Element_meteredSupplyCharge"><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_servicePeriod" href="charges_xsd_Complex_Type_chargeType.html#chargeType_servicePeriod" coords="263,40,366,64" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_serviceTierNr" href="charges_xsd_Complex_Type_chargeType.html#chargeType_serviceTierNr" coords="263,74,366,98" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_ratePeriodNr" href="charges_xsd_Complex_Type_chargeType.html#chargeType_ratePeriodNr" coords="263,108,362,132" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_peakType" href="charges_xsd_Complex_Type_chargeType.html#chargeType_peakType" coords="263,142,345,166" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_month" href="charges_xsd_Complex_Type_chargeType.html#chargeType_month" coords="263,176,329,200" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_chargeName" href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeName" coords="263,210,361,234" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_description" href="charges_xsd_Complex_Type_chargeType.html#chargeType_description" coords="263,244,355,268" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_chargeValue" href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeValue" coords="263,278,360,302" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_uom" href="charges_xsd_Complex_Type_chargeType.html#chargeType_uom" coords="263,312,318,336" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_measurementDefinition" href="charges_xsd_Complex_Type_chargeType.html#chargeType_measurementDefinition" coords="263,346,419,370" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_chargesComponent" href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargesComponent" coords="263,380,400,404" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType" href="charges_xsd_Complex_Type_chargeType.html#chargeType" coords="181,3,295,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeType')">chargeType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>unbounded</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" style="display:block"><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_servicePeriod" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component servicePeriod')">servicePeriod</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_serviceTierNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceTierNr{0,1}')">serviceTierNr{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_ratePeriodNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePeriodNr{0,1}')">ratePeriodNr{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_peakType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component peakType{0,1}')">peakType{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_month" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component month{0,1}')">month{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeName')">chargeName</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component description{0,1}')">description{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeValue" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeValue')">chargeValue</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_uom" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component uom{0,1}')">uom{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_measurementDefinition" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementDefinition{0,1}')">measurementDefinition{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargesComponent" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargesComponent')">chargesComponent</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeName')">chargeName</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeValue" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeValue')">chargeValue</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargesComponent" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargesComponent')">chargesComponent</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component description')">description</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_measurementDefinition" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementDefinition')">measurementDefinition</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_month" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component month')">month</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_peakType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component peakType')">peakType</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_ratePeriodNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePeriodNr')">ratePeriodNr</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_servicePeriod" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component servicePeriod')">servicePeriod</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_serviceTierNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceTierNr')">serviceTierNr</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_uom" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component uom')">uom</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('instance_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;meteredSupplyCharge</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;servicePeriod</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/servicePeriod&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;serviceTierNr</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/serviceTierNr&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePeriodNr</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/ratePeriodNr&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;peakType</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/peakType&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;month</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/month&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;chargeName</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/chargeName&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;description</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/description&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;chargeValue</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/chargeValue&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;uom</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/uom&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;measurementDefinition</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/measurementDefinition&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;chargesComponent</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/chargesComponent&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/meteredSupplyCharge&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> name=</span><span class="tAV">"meteredSupplyCharge"</span><span class="tAN"> type=</span><span class="tAV">"chargeType"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/rate_plan_data_output.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="ratePlanSelection_exportCredits"></a><div class="componentTitle">Element <span class="qname"><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanSelection')">ratePlanSelection</a></b> / exportCredits</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_ratePlanSelection_exportCredits" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_ratePlanSelection_exportCredits');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_ratePlanSelection_exportCredits" style="display:block"><img alt="Diagram" style="border:0" src="img/rate_plan_data_output_xsd_Element_exportCredits.jpeg" usemap="#rate_plan_data_output_xsd_Element_exportCredits" /><map name="rate_plan_data_output_xsd_Element_exportCredits" id="rate_plan_data_output_xsd_Element_exportCredits"><area alt="rate_plan_data_output_xsd_Element_ratePlanSelection.tmp#ratePlanSelection_ratePlanSelection_exportCredits_exportCredit" href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_exportCredits_exportCredit" coords="226,2,354,44" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_ratePlanSelection_exportCredits" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_ratePlanSelection_exportCredits');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_ratePlanSelection_exportCredits" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_ratePlanSelection_exportCredits" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_ratePlanSelection_exportCredits');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_ratePlanSelection_exportCredits" style="display:block"><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_exportCredits_exportCredit" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component exportCredit+')">exportCredit+</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_exportCredits_exportCredit" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component exportCredit')">exportCredit</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_ratePlanSelection_exportCredits" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('instance_ratePlanSelection_exportCredits');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_ratePlanSelection_exportCredits" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;exportCredits</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;exportCredit</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,unbounded}</span><span class="tEl">&lt;/exportCredit&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/exportCredits&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_ratePlanSelection_exportCredits" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_ratePlanSelection_exportCredits');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_ratePlanSelection_exportCredits" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"exportCredits"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> name=</span><span class="tAV">"exportCredit"</span><span class="tAN"> type=</span><span class="tAV">"chargeType"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/rate_plan_data_output.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="ratePlanSelection_ratePlanSelection_exportCredits_exportCredit"></a><div class="componentTitle">Element <span class="qname"><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanSelection')">ratePlanSelection</a></b> / <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_exportCredits" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component exportCredits')">exportCredits</a></b> / exportCredit</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit" style="display:block"><img alt="Diagram" style="border:0" src="img/rate_plan_data_output_xsd_Element_exportCredit.jpeg" usemap="#rate_plan_data_output_xsd_Element_exportCredit" /><map name="rate_plan_data_output_xsd_Element_exportCredit" id="rate_plan_data_output_xsd_Element_exportCredit"><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_servicePeriod" href="charges_xsd_Complex_Type_chargeType.html#chargeType_servicePeriod" coords="241,40,344,64" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_serviceTierNr" href="charges_xsd_Complex_Type_chargeType.html#chargeType_serviceTierNr" coords="241,74,344,98" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_ratePeriodNr" href="charges_xsd_Complex_Type_chargeType.html#chargeType_ratePeriodNr" coords="241,108,340,132" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_peakType" href="charges_xsd_Complex_Type_chargeType.html#chargeType_peakType" coords="241,142,323,166" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_month" href="charges_xsd_Complex_Type_chargeType.html#chargeType_month" coords="241,176,307,200" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_chargeName" href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeName" coords="241,210,339,234" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_description" href="charges_xsd_Complex_Type_chargeType.html#chargeType_description" coords="241,244,333,268" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_chargeValue" href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeValue" coords="241,278,338,302" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_uom" href="charges_xsd_Complex_Type_chargeType.html#chargeType_uom" coords="241,312,296,336" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_measurementDefinition" href="charges_xsd_Complex_Type_chargeType.html#chargeType_measurementDefinition" coords="241,346,397,370" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_chargesComponent" href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargesComponent" coords="241,380,378,404" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType" href="charges_xsd_Complex_Type_chargeType.html#chargeType" coords="159,3,273,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeType')">chargeType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>unbounded</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit" style="display:block"><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_servicePeriod" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component servicePeriod')">servicePeriod</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_serviceTierNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceTierNr{0,1}')">serviceTierNr{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_ratePeriodNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePeriodNr{0,1}')">ratePeriodNr{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_peakType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component peakType{0,1}')">peakType{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_month" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component month{0,1}')">month{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeName')">chargeName</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component description{0,1}')">description{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeValue" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeValue')">chargeValue</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_uom" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component uom{0,1}')">uom{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_measurementDefinition" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementDefinition{0,1}')">measurementDefinition{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargesComponent" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargesComponent')">chargesComponent</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeName')">chargeName</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeValue" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeValue')">chargeValue</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargesComponent" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargesComponent')">chargesComponent</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component description')">description</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_measurementDefinition" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementDefinition')">measurementDefinition</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_month" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component month')">month</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_peakType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component peakType')">peakType</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_ratePeriodNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePeriodNr')">ratePeriodNr</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_servicePeriod" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component servicePeriod')">servicePeriod</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_serviceTierNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceTierNr')">serviceTierNr</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_uom" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component uom')">uom</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('instance_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;exportCredit</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;servicePeriod</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/servicePeriod&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;serviceTierNr</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/serviceTierNr&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePeriodNr</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/ratePeriodNr&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;peakType</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/peakType&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;month</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/month&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;chargeName</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/chargeName&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;description</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/description&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;chargeValue</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/chargeValue&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;uom</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/uom&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;measurementDefinition</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/measurementDefinition&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;chargesComponent</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/chargesComponent&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/exportCredit&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_ratePlanSelection_ratePlanSelection_exportCredits_exportCredit" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> name=</span><span class="tAV">"exportCredit"</span><span class="tAN"> type=</span><span class="tAV">"chargeType"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/rate_plan_data_output.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="ratePlanSelection_otherCharges"></a><div class="componentTitle">Element <span class="qname"><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanSelection')">ratePlanSelection</a></b> / otherCharges</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_ratePlanSelection_otherCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_ratePlanSelection_otherCharges');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_ratePlanSelection_otherCharges" style="display:block"><img alt="Diagram" style="border:0" src="img/rate_plan_data_output_xsd_Element_otherCharges.jpeg" usemap="#rate_plan_data_output_xsd_Element_otherCharges" /><map name="rate_plan_data_output_xsd_Element_otherCharges" id="rate_plan_data_output_xsd_Element_otherCharges"><area alt="other_fixed_charges_xsd_Element_otherFixedCharges.tmp#otherFixedCharges" href="other_fixed_charges_xsd_Element_otherFixedCharges.html#otherFixedCharges" coords="225,6,359,30" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_ratePlanSelection_otherCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_ratePlanSelection_otherCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_ratePlanSelection_otherCharges" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_ratePlanSelection_otherCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_ratePlanSelection_otherCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_ratePlanSelection_otherCharges" style="display:block"><b><a href="other_fixed_charges_xsd_Element_otherFixedCharges.html#otherFixedCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component otherFixedCharges+')">otherFixedCharges+</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="other_fixed_charges_xsd_Element_otherFixedCharges.html#otherFixedCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component otherFixedCharges')">otherFixedCharges</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_ratePlanSelection_otherCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('instance_ratePlanSelection_otherCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_ratePlanSelection_otherCharges" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;otherCharges</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;otherFixedCharges</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,unbounded}</span><span class="tEl">&lt;/otherFixedCharges&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/otherCharges&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_ratePlanSelection_otherCharges" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_ratePlanSelection_otherCharges');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_ratePlanSelection_otherCharges" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"otherCharges"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> ref=</span><span class="tAV">"otherFixedCharges"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/rate_plan_data_output.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr />
+         <div style="text-align:center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor Trial Edition.</div>
+      </div><script type="text/javascript"><!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>

@@ -1,0 +1,1842 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for component servicePeriod</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript"><!--
+        var propertiesBoxes= new Array('properties_chargeType_servicePeriod', 
+				'properties_chargeType_serviceTierNr', 
+				'properties_chargeType_ratePeriodNr', 
+				'properties_chargeType_peakType', 
+				'properties_chargeType_month', 
+				'properties_chargeType_chargeName', 
+				'properties_chargeType_description', 
+				'properties_chargeType_chargeValue', 
+				'properties_chargeType_uom', 
+				'properties_chargeType_measurementDefinition', 
+				'properties_chargeType_chargesComponent');
+var facetsBoxes= new Array('facets_chargeType_peakType', 
+				'facets_chargeType_month', 
+				'facets_chargeType_uom', 
+				'facets_chargeType_chargesComponent');
+var usedByBoxes= new Array('usedBy_chargeType');
+var sourceBoxes= new Array('source_chargeType_servicePeriod', 
+				'source_chargeType_serviceTierNr', 
+				'source_chargeType_ratePeriodNr', 
+				'source_chargeType_peakType', 
+				'source_chargeType_month', 
+				'source_chargeType_chargeName', 
+				'source_chargeType_description', 
+				'source_chargeType_chargeValue', 
+				'source_chargeType_uom', 
+				'source_chargeType_measurementDefinition', 
+				'source_chargeType_chargesComponent', 
+				'source_chargeType');
+var instanceBoxes= new Array('instance_chargeType_servicePeriod', 
+				'instance_chargeType_measurementDefinition');
+var diagramBoxes= new Array('diagram_chargeType_servicePeriod', 
+				'diagram_chargeType_serviceTierNr', 
+				'diagram_chargeType_ratePeriodNr', 
+				'diagram_chargeType_peakType', 
+				'diagram_chargeType_month', 
+				'diagram_chargeType_chargeName', 
+				'diagram_chargeType_description', 
+				'diagram_chargeType_chargeValue', 
+				'diagram_chargeType_uom', 
+				'diagram_chargeType_measurementDefinition', 
+				'diagram_chargeType_chargesComponent', 
+				'diagram_chargeType');
+var annotationBoxes= new Array('annotations_chargeType_serviceTierNr', 
+				'annotations_chargeType_chargeName');
+var modelBoxes= new Array('model_chargeType_servicePeriod', 
+				'model_chargeType_measurementDefinition', 
+				'model_chargeType');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, annotationBoxes);" class="control" /></span><span class="globalControlName">Annotations</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, diagramBoxes);" class="control" /></span><span class="globalControlName">Diagrams</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, facetsBoxes);" class="control" /></span><span class="globalControlName">Facets </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, instanceBoxes);" class="control" /></span><span class="globalControlName">Instances</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, modelBoxes);" class="control" /></span><span class="globalControlName">Model </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
+                     </tr>
+                  </table>
+                  <div style="text-align:center"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+               </td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div><a id="chargeType_servicePeriod"></a><div class="componentTitle">Element <span class="qname"><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeType')">chargeType</a></b> / servicePeriod</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_chargeType_servicePeriod" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_chargeType_servicePeriod');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_chargeType_servicePeriod" style="display:block"><img alt="Diagram" style="border:0" src="img/charges_xsd_Element_servicePeriod.jpeg" usemap="#charges_xsd_Element_servicePeriod" /><map name="charges_xsd_Element_servicePeriod" id="charges_xsd_Element_servicePeriod"><area alt="common_definitions_xsd_Complex_Type_dateIntervalType.tmp#dateIntervalType_startDate" href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType_startDate" coords="216,40,296,64" /><area alt="common_definitions_xsd_Complex_Type_dateIntervalType.tmp#dateIntervalType_endDate" href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType_endDate" coords="216,74,291,98" /><area alt="common_definitions_xsd_Complex_Type_dateIntervalType.tmp#dateIntervalType" href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType" coords="134,3,274,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component dateIntervalType')">dateIntervalType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_chargeType_servicePeriod" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_chargeType_servicePeriod');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_chargeType_servicePeriod" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_chargeType_servicePeriod" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_chargeType_servicePeriod');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_chargeType_servicePeriod" style="display:block"><b><a href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType_startDate" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component startDate')">startDate</a></b> , <b><a href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType_endDate" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component endDate{0,1}')">endDate{0,1}</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType_endDate" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component endDate')">endDate</a></b>, <b><a href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType_startDate" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component startDate')">startDate</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_chargeType_servicePeriod" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('instance_chargeType_servicePeriod');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_chargeType_servicePeriod" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;servicePeriod</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;startDate</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/startDate&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;endDate</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/endDate&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/servicePeriod&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_chargeType_servicePeriod" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_chargeType_servicePeriod');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_chargeType_servicePeriod" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"servicePeriod"</span><span class="tAN"> type=</span><span class="tAV">"dateIntervalType"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/charges.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="chargeType_serviceTierNr"></a><div class="componentTitle">Element <span class="qname"><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeType')">chargeType</a></b> / serviceTierNr</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_chargeType_serviceTierNr" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('annotations_chargeType_serviceTierNr');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_chargeType_serviceTierNr" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td style="width:100%">
+                                          <pre><span class="tT">Tooltip:</span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT"> the number for the threshold tier for which the minimum charge is applicable (if any tiered thresholds exist for the rate)</span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT"> Comment:</span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT"> The number of the tier for which the base charge is applicable (if any tier thresholds exist for the rate).</span></pre>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_chargeType_serviceTierNr" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_chargeType_serviceTierNr');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_chargeType_serviceTierNr" style="display:block"><img alt="Diagram" style="border:0" src="img/charges_xsd_Element_serviceTierNr.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:int</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_chargeType_serviceTierNr" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_chargeType_serviceTierNr');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_chargeType_serviceTierNr" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_chargeType_serviceTierNr" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_chargeType_serviceTierNr');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_chargeType_serviceTierNr" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"serviceTierNr"</span><span class="tAN"> type=</span><span class="tAV">"xs:int"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+      </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the number for the threshold tier for which the minimum charge is applicable (if any tiered thresholds exist for the rate)</span><span class="tI">
+      </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+      </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">The number of the tier for which the base charge is applicable (if any tier thresholds exist for the rate).</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/charges.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="chargeType_ratePeriodNr"></a><div class="componentTitle">Element <span class="qname"><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeType')">chargeType</a></b> / ratePeriodNr</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_chargeType_ratePeriodNr" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_chargeType_ratePeriodNr');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_chargeType_ratePeriodNr" style="display:block"><img alt="Diagram" style="border:0" src="img/charges_xsd_Element_ratePeriodNr.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:int</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_chargeType_ratePeriodNr" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_chargeType_ratePeriodNr');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_chargeType_ratePeriodNr" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_chargeType_ratePeriodNr" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_chargeType_ratePeriodNr');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_chargeType_ratePeriodNr" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"ratePeriodNr"</span><span class="tAN"> type=</span><span class="tAV">"xs:int"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/charges.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="chargeType_peakType"></a><div class="componentTitle">Element <span class="qname"><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeType')">chargeType</a></b> / peakType</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_chargeType_peakType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_chargeType_peakType');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_chargeType_peakType" style="display:block"><img alt="Diagram" style="border:0" src="img/charges_xsd_Element_peakType.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>restriction of <b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_chargeType_peakType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_chargeType_peakType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_chargeType_peakType" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_chargeType_peakType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('facets_chargeType_peakType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_chargeType_peakType" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>base</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>mid</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>peak</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>offpeak</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>shoulderpeak</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>superpeak</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_chargeType_peakType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_chargeType_peakType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_chargeType_peakType" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"peakType"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Name of the Peak Type</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"base"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"mid"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"peak"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"offpeak"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"shoulderpeak"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"superpeak"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/charges.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="chargeType_month"></a><div class="componentTitle">Element <span class="qname"><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeType')">chargeType</a></b> / month</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_chargeType_month" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_chargeType_month');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_chargeType_month" style="display:block"><img alt="Diagram" style="border:0" src="img/charges_xsd_Element_month.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>restriction of <b>xs:int</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_chargeType_month" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_chargeType_month');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_chargeType_month" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_chargeType_month" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('facets_chargeType_month');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_chargeType_month" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">totalDigits</td>
+                                    <td style="width:30%"><b>2</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">maxInclusive</td>
+                                    <td style="width:30%"><b>12</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">minInclusive</td>
+                                    <td style="width:30%"><b>1</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_chargeType_month" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_chargeType_month');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_chargeType_month" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"month"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the number representing the month as an integer (i.e. 1-12)</span><span class="tI">
+        </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+        </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the number for the month, as a zero padded two digit number, e.g. 01-12</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:int"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:minInclusive</span><span class="tAN"> value=</span><span class="tAV">"1"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:maxInclusive</span><span class="tAN"> value=</span><span class="tAV">"12"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:totalDigits</span><span class="tAN"> value=</span><span class="tAV">"2"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/charges.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="chargeType_chargeName"></a><div class="componentTitle">Element <span class="qname"><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeType')">chargeType</a></b> / chargeName</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_chargeType_chargeName" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('annotations_chargeType_chargeName');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_chargeType_chargeName" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td style="width:100%">
+                                          <pre><span class="tT">Tooltip:</span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT"> the name of the minimum charge (e.g. "Basic Service Charge", "Bill Issuance Charge")</span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT"> Comment:</span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT"> The name of the minimum charge, ex.: "Basic Service Charge"</span></pre>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_chargeType_chargeName" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_chargeType_chargeName');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_chargeType_chargeName" style="display:block"><img alt="Diagram" style="border:0" src="img/charges_xsd_Element_chargeName.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_chargeType_chargeName" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_chargeType_chargeName');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_chargeType_chargeName" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_chargeType_chargeName" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_chargeType_chargeName');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_chargeType_chargeName" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"chargeName"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+      </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the name of the minimum charge (e.g. "Basic Service Charge", "Bill Issuance Charge")</span><span class="tI">
+      </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+      </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">The name of the minimum charge, ex.: "Basic Service Charge"</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/charges.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="chargeType_description"></a><div class="componentTitle">Element <span class="qname"><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeType')">chargeType</a></b> / description</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_chargeType_description" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_chargeType_description');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_chargeType_description" style="display:block"><img alt="Diagram" style="border:0" src="img/charges_xsd_Element_description.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_chargeType_description" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_chargeType_description');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_chargeType_description" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_chargeType_description" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_chargeType_description');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_chargeType_description" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"description"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/charges.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="chargeType_chargeValue"></a><div class="componentTitle">Element <span class="qname"><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeType')">chargeType</a></b> / chargeValue</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_chargeType_chargeValue" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_chargeType_chargeValue');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_chargeType_chargeValue" style="display:block"><img alt="Diagram" style="border:0" src="img/charges_xsd_Element_chargeValue.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:decimal</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_chargeType_chargeValue" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_chargeType_chargeValue');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_chargeType_chargeValue" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_chargeType_chargeValue" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_chargeType_chargeValue');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_chargeType_chargeValue" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"chargeValue"</span><span class="tAN"> type=</span><span class="tAV">"xs:decimal"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/charges.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="chargeType_uom"></a><div class="componentTitle">Element <span class="qname"><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeType')">chargeType</a></b> / uom</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_chargeType_uom" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_chargeType_uom');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_chargeType_uom" style="display:block"><img alt="Diagram" style="border:0" src="img/charges_xsd_Element_uom.jpeg" usemap="#charges_xsd_Element_uom" /><map name="charges_xsd_Element_uom" id="charges_xsd_Element_uom"><area alt="common_definitions_xsd_Simple_Type_unitSymbolKind.tmp#unitSymbolKind" href="common_definitions_xsd_Simple_Type_unitSymbolKind.html#unitSymbolKind" coords="83,0,222,26" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="common_definitions_xsd_Simple_Type_unitSymbolKind.html#unitSymbolKind" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component unitSymbolKind')">unitSymbolKind</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_chargeType_uom" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_chargeType_uom');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_chargeType_uom" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_chargeType_uom" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('facets_chargeType_uom');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_chargeType_uom" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>Wh</b></td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">Real energy, multiplier=3 for kWh, multiplier=6 for MWh.</span></pre>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>W</b></td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">Real power, multiplier=3 for kW, multiplier=6 for MW.</span></pre>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>thm</b></td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">Energy, unit of heat energy that equal to 100,000 British thermal units (BTU). Multiplier = 1 for Deca therm (Dth).</span></pre>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>BTU</b></td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">Energy, multiplier = 5 for Metric Million British Thermal Unit (MMBtu).</span></pre>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>VA</b></td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">Apparent power, multiplier=3 for Kilo Volt-ampere (kVA)</span></pre>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>VArh</b></td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">Reactive energy, multiplier=3 for Kilo Volt-Ampere reactive hours (kVArh)</span></pre>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>VAr</b></td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">Reactive power, multiplier=3 for Kilo Volt-Ampere Reactive (kVAr)</span></pre>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>VAh</b></td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">Apparent energy</span></pre>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>VA</b></td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">Apparent power</span></pre>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>V</b></td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">Electric potential</span></pre>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>lb</b></td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td style="width:100%">
+                                                   <pre><span class="tT">Pounds, multiplier=6 for Mlb of Steam</span></pre>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_chargeType_uom" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_chargeType_uom');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_chargeType_uom" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"uom"</span><span class="tAN"> type=</span><span class="tAV">"unitSymbolKind"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/charges.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="chargeType_measurementDefinition"></a><div class="componentTitle">Element <span class="qname"><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeType')">chargeType</a></b> / measurementDefinition</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_chargeType_measurementDefinition" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_chargeType_measurementDefinition');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_chargeType_measurementDefinition" style="display:block"><img alt="Diagram" style="border:0" src="img/charges_xsd_Element_measurementDefinition.jpeg" usemap="#charges_xsd_Element_measurementDefinition" /><map name="charges_xsd_Element_measurementDefinition" id="charges_xsd_Element_measurementDefinition"><area alt="common_definitions_xsd_Complex_Type_measureType.tmp#measureType_calculationMethod" href="common_definitions_xsd_Complex_Type_measureType.html#measureType_calculationMethod" coords="269,40,398,64" /><area alt="common_definitions_xsd_Complex_Type_measureType.tmp#measureType_calculationBaseValue" href="common_definitions_xsd_Complex_Type_measureType.html#measureType_calculationBaseValue" coords="269,74,411,98" /><area alt="common_definitions_xsd_Complex_Type_measureType.tmp#measureType_measurementSource" href="common_definitions_xsd_Complex_Type_measureType.html#measureType_measurementSource" coords="269,108,410,132" /><area alt="common_definitions_xsd_Complex_Type_measureType.tmp#measureType_phases" href="common_definitions_xsd_Complex_Type_measureType.html#measureType_phases" coords="269,142,338,166" /><area alt="common_definitions_xsd_Complex_Type_measureType.tmp#measureType_unitOfMeasure" href="common_definitions_xsd_Complex_Type_measureType.html#measureType_unitOfMeasure" coords="269,176,379,200" /><area alt="common_definitions_xsd_Element_unitMultiplierPowerOfTen.tmp#unitMultiplierPowerOfTen" href="common_definitions_xsd_Element_unitMultiplierPowerOfTen.html#unitMultiplierPowerOfTen" coords="269,210,436,234" /><area alt="common_definitions_xsd_Complex_Type_measureType.tmp#measureType_measurementInterval" href="common_definitions_xsd_Complex_Type_measureType.html#measureType_measurementInterval" coords="269,244,413,268" /><area alt="common_definitions_xsd_Element_statisticKind.tmp#statisticKind" href="common_definitions_xsd_Element_statisticKind.html#statisticKind" coords="269,278,366,302" /><area alt="common_definitions_xsd_Complex_Type_measureType.tmp#measureType_inclusionStatus" href="common_definitions_xsd_Complex_Type_measureType.html#measureType_inclusionStatus" coords="269,312,382,336" /><area alt="common_definitions_xsd_Complex_Type_measureType.tmp#measureType" href="common_definitions_xsd_Complex_Type_measureType.html#measureType" coords="187,3,310,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measureType')">measureType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_chargeType_measurementDefinition" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_chargeType_measurementDefinition');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_chargeType_measurementDefinition" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_chargeType_measurementDefinition" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_chargeType_measurementDefinition');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_chargeType_measurementDefinition" style="display:block"><b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType_calculationMethod" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component calculationMethod')">calculationMethod</a></b> , <b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType_calculationBaseValue" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component calculationBaseValue{0,1}')">calculationBaseValue{0,1}</a></b> , <b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType_measurementSource" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementSource')">measurementSource</a></b> , <b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType_phases" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component phases{0,1}')">phases{0,1}</a></b> , <b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType_unitOfMeasure" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component unitOfMeasure')">unitOfMeasure</a></b> , <b><a href="common_definitions_xsd_Element_unitMultiplierPowerOfTen.html#unitMultiplierPowerOfTen" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component unitMultiplierPowerOfTen')">unitMultiplierPowerOfTen</a></b> , <b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType_measurementInterval" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementInterval')">measurementInterval</a></b> , <b><a href="common_definitions_xsd_Element_statisticKind.html#statisticKind" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component statisticKind{0,1}')">statisticKind{0,1}</a></b> , <b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType_inclusionStatus" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component inclusionStatus{0,1}')">inclusionStatus{0,1}</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType_calculationBaseValue" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component calculationBaseValue')">calculationBaseValue</a></b>, <b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType_calculationMethod" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component calculationMethod')">calculationMethod</a></b>, <b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType_inclusionStatus" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component inclusionStatus')">inclusionStatus</a></b>, <b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType_measurementInterval" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementInterval')">measurementInterval</a></b>, <b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType_measurementSource" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementSource')">measurementSource</a></b>, <b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType_phases" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component phases')">phases</a></b>, <b><a href="common_definitions_xsd_Element_statisticKind.html#statisticKind" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component statisticKind')">statisticKind</a></b>, <b><a href="common_definitions_xsd_Element_unitMultiplierPowerOfTen.html#unitMultiplierPowerOfTen" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component unitMultiplierPowerOfTen')">unitMultiplierPowerOfTen</a></b>, <b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType_unitOfMeasure" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component unitOfMeasure')">unitOfMeasure</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_chargeType_measurementDefinition" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('instance_chargeType_measurementDefinition');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_chargeType_measurementDefinition" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;measurementDefinition</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;calculationMethod</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/calculationMethod&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;calculationBaseValue</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/calculationBaseValue&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;measurementSource</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/measurementSource&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;phases</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/phases&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;unitOfMeasure</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/unitOfMeasure&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;unitMultiplierPowerOfTen</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/unitMultiplierPowerOfTen&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;measurementInterval</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/measurementInterval&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;statisticKind</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/statisticKind&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;inclusionStatus</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/inclusionStatus&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/measurementDefinition&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_chargeType_measurementDefinition" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_chargeType_measurementDefinition');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_chargeType_measurementDefinition" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"measurementDefinition"</span><span class="tAN"> type=</span><span class="tAV">"measureType"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/charges.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="chargeType_chargesComponent"></a><div class="componentTitle">Element <span class="qname"><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeType')">chargeType</a></b> / chargesComponent</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_chargeType_chargesComponent" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_chargeType_chargesComponent');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_chargeType_chargesComponent" style="display:block"><img alt="Diagram" style="border:0" src="img/charges_xsd_Element_chargesComponent.jpeg" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td>restriction of <b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_chargeType_chargesComponent" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('properties_chargeType_chargesComponent');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_chargeType_chargesComponent" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_chargeType_chargesComponent" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('facets_chargeType_chargesComponent');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_chargeType_chargesComponent" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>delivery</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>supply</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>bundled</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td style="width:30%"><b>export</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_chargeType_chargesComponent" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_chargeType_chargesComponent');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_chargeType_chargesComponent" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"chargesComponent"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"delivery"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"supply"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"bundled"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"export"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/charges.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="chargeType"></a><div class="componentTitle">Complex Type <span class="qname">chargeType</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_chargeType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('diagram_chargeType');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_chargeType" style="display:block"><img alt="Diagram" style="border:0" src="img/charges_xsd_Complex_Type_chargeType.jpeg" usemap="#charges_xsd_Complex_Type_chargeType" /><map name="charges_xsd_Complex_Type_chargeType" id="charges_xsd_Complex_Type_chargeType"><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_servicePeriod" href="charges_xsd_Complex_Type_chargeType.html#chargeType_servicePeriod" coords="217,0,320,24" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_serviceTierNr" href="charges_xsd_Complex_Type_chargeType.html#chargeType_serviceTierNr" coords="217,34,320,58" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_ratePeriodNr" href="charges_xsd_Complex_Type_chargeType.html#chargeType_ratePeriodNr" coords="217,68,316,92" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_peakType" href="charges_xsd_Complex_Type_chargeType.html#chargeType_peakType" coords="217,102,299,126" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_month" href="charges_xsd_Complex_Type_chargeType.html#chargeType_month" coords="217,136,283,160" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_chargeName" href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeName" coords="217,170,315,194" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_description" href="charges_xsd_Complex_Type_chargeType.html#chargeType_description" coords="217,204,309,228" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_chargeValue" href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeValue" coords="217,238,314,262" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_uom" href="charges_xsd_Complex_Type_chargeType.html#chargeType_uom" coords="217,272,272,296" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_measurementDefinition" href="charges_xsd_Complex_Type_chargeType.html#chargeType_measurementDefinition" coords="217,306,373,330" /><area alt="charges_xsd_Complex_Type_chargeType.tmp#chargeType_chargesComponent" href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargesComponent" coords="217,340,354,364" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_chargeType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('usedBy_chargeType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_chargeType" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Elements </td>
+                                    <td><b><a href="charges_xsd_Element_charges.html#charges_charge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component charges/charge')">charges/charge</a></b>, <b><a href="rate_plan_data_output_xsd_Element_meteredCharge.html#meteredCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component meteredCharge')">meteredCharge</a></b>, <b><a href="minimum_charges_xsd_Element_minimumCharges.html#minimumCharges_minimumCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component minimumCharges/minimumCharge')">minimumCharges/minimumCharge</a></b>, <b><a href="nonmetered_service_charges_xsd_Element_nonmeteredServiceCharges.html#nonmeteredServiceCharges_nonmeteredServiceCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component nonmeteredServiceCharges/nonmeteredServiceCharge')">nonmeteredServiceCharges/nonmeteredServiceCharge</a></b>, <b><a href="other_fixed_charges_xsd_Element_otherFixedCharges.html#otherFixedCharges_otherFixedCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component otherFixedCharges/otherFixedCharge')">otherFixedCharges/otherFixedCharge</a></b>, <b><a href="rate_plan_data_output_xsd_Element_ratePlanScenario.html#ratePlanScenario_ratePlanScenario_modifierSelection_ratePlanScenario_ratePlanScenario_modifierSelection_deliveryCharges_ratePlanScenario_ratePlanScenario_modifierSelection_ratePlanScenario_ratePlanScenario_modifierSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanScenario/modifierSelection/deliveryCharges/meteredDeliveryCharges/meteredDeliveryCharge')">ratePlanScenario/modifierSelection/deliveryCharges/meteredDeliveryCharges/meteredDeliveryCharge</a></b>, <b><a href="rate_plan_data_output_xsd_Element_ratePlanScenario.html#ratePlanScenario_ratePlanScenario_modifierSelection_ratePlanScenario_ratePlanScenario_modifierSelection_exportCredits_exportCredit" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanScenario/modifierSelection/exportCredits/exportCredit')">ratePlanScenario/modifierSelection/exportCredits/exportCredit</a></b>, <b><a href="rate_plan_data_output_xsd_Element_ratePlanScenario.html#ratePlanScenario_ratePlanScenario_modifierSelection_ratePlanScenario_ratePlanScenario_modifierSelection_supplyCharges_ratePlanScenario_ratePlanScenario_modifierSelection_ratePlanScenario_ratePlanScenario_modifierSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanScenario/modifierSelection/supplyCharges/meteredSupplyCharges/meteredSupplyCharge')">ratePlanScenario/modifierSelection/supplyCharges/meteredSupplyCharges/meteredSupplyCharge</a></b>, <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_deliveryCharges_ratePlanSelection_ratePlanSelection_deliveryCharges_meteredDeliveryCharges_meteredDeliveryCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanSelection/deliveryCharges/meteredDeliveryCharges/meteredDeliveryCharge')">ratePlanSelection/deliveryCharges/meteredDeliveryCharges/meteredDeliveryCharge</a></b>, <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_exportCredits_exportCredit" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanSelection/exportCredits/exportCredit')">ratePlanSelection/exportCredits/exportCredit</a></b>, <b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection_ratePlanSelection_supplyCharges_ratePlanSelection_ratePlanSelection_supplyCharges_meteredSupplyCharges_meteredSupplyCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanSelection/supplyCharges/meteredSupplyCharges/meteredSupplyCharge')">ratePlanSelection/supplyCharges/meteredSupplyCharges/meteredSupplyCharge</a></b>, <b><a href="statement_charges_xsd_Element_statementCharges.html#statementCharges_statementCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component statementCharges/statementCharge')">statementCharges/statementCharge</a></b>, <b><a href="charges_supply_xsd_Element_supplyCharges.html#supplyCharges_supplyCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component supplyCharges/supplyCharge')">supplyCharges/supplyCharge</a></b>, <b><a href="tariff_book_charges_xsd_Element_tariffBookCharges.html#tariffBookCharges_tariffBookCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component tariffBookCharges/tariffBookCharge')">tariffBookCharges/tariffBookCharge</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_chargeType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_chargeType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_chargeType" style="display:block"><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_servicePeriod" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component servicePeriod')">servicePeriod</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_serviceTierNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceTierNr{0,1}')">serviceTierNr{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_ratePeriodNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePeriodNr{0,1}')">ratePeriodNr{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_peakType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component peakType{0,1}')">peakType{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_month" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component month{0,1}')">month{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeName')">chargeName</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component description{0,1}')">description{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeValue" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeValue')">chargeValue</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_uom" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component uom{0,1}')">uom{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_measurementDefinition" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementDefinition{0,1}')">measurementDefinition{0,1}</a></b> , <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargesComponent" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargesComponent')">chargesComponent</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeName')">chargeName</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargeValue" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeValue')">chargeValue</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_chargesComponent" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargesComponent')">chargesComponent</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component description')">description</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_measurementDefinition" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementDefinition')">measurementDefinition</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_month" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component month')">month</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_peakType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component peakType')">peakType</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_ratePeriodNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePeriodNr')">ratePeriodNr</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_servicePeriod" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component servicePeriod')">servicePeriod</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_serviceTierNr" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceTierNr')">serviceTierNr</a></b>, <b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType_uom" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component uom')">uom</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_chargeType" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('source_chargeType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_chargeType" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td style="width:100%">
+                                       <pre><span class="tEl">&lt;xs:complexType</span><span class="tAN"> name=</span><span class="tAV">"chargeType"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"servicePeriod"</span><span class="tAN"> type=</span><span class="tAV">"dateIntervalType"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"serviceTierNr"</span><span class="tAN"> type=</span><span class="tAV">"xs:int"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+          </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the number for the threshold tier for which the minimum charge is applicable (if any tiered thresholds exist for the rate)</span><span class="tI">
+          </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+          </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">The number of the tier for which the base charge is applicable (if any tier thresholds exist for the rate).</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"ratePeriodNr"</span><span class="tAN"> type=</span><span class="tAV">"xs:int"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"peakType"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Name of the Peak Type</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"base"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"mid"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"peak"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"offpeak"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"shoulderpeak"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"superpeak"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"month"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the number representing the month as an integer (i.e. 1-12)</span><span class="tI">
+            </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+            </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the number for the month, as a zero padded two digit number, e.g. 01-12</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:int"</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:minInclusive</span><span class="tAN"> value=</span><span class="tAV">"1"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:maxInclusive</span><span class="tAN"> value=</span><span class="tAV">"12"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:totalDigits</span><span class="tAN"> value=</span><span class="tAV">"2"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"chargeName"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Tooltip:</span><span class="tI">
+          </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">the name of the minimum charge (e.g. "Basic Service Charge", "Bill Issuance Charge")</span><span class="tI">
+          </span><span class="tEl">&lt;p</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">Comment:</span><span class="tI">
+          </span><span class="tEl">&lt;br</span><span class="tEl">/&gt;</span><span class="tT" style="white-space:normal">The name of the minimum charge, ex.: "Basic Service Charge"</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"description"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"chargeValue"</span><span class="tAN"> type=</span><span class="tAV">"xs:decimal"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"uom"</span><span class="tAN"> type=</span><span class="tAV">"unitSymbolKind"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"measurementDefinition"</span><span class="tAN"> type=</span><span class="tAV">"measureType"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"chargesComponent"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:simpleType</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"delivery"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"supply"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"bundled"</span><span class="tEl">/&gt;</span><span class="tI">
+          </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"export"</span><span class="tEl">/&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:simpleType&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:complexType&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/Users/aminatacisse/Desktop/flux-tailor/rate-plan-schema/charges.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr />
+         <div style="text-align:center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor Trial Edition.</div>
+      </div><script type="text/javascript"><!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>

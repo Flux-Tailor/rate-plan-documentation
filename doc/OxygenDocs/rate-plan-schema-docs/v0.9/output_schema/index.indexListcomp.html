@@ -1,0 +1,543 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for </title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript"><!--
+        
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                        //--></script></head>
+   <body>
+      <h2><a id="INDEX">Table of Contents</a></h2>
+      <p><a href="index.indexList.html">Components</a><span> | </span><a href="schHierarchy.html">Resource Hierarchy</a></p>
+      <hr />
+      <div class="toc">
+         <form action="none">
+            <div><span> Group by: <select id="selectTOC" onchange="selectTOCGroupBy(this.options[this.selectedIndex].value, true, 'index.indexList.html', 'index.indexListns.html', 'index.indexListcomp.html');">
+                     <option value="toc_group_by_namespace">Namespace</option>
+                     <option value="toc_group_by_location">Location</option>
+                     <option value="toc_group_by_component_type" selected="selected">Component Type</option></select></span></div>
+         </form>
+         <div class="level1" id="toc_group_by_component_type" style="display:block">
+            <div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <table class="componentGroup">
+                              <tbody>
+                                 <tr>
+                                    <td class="componentGroup"><input id="button_Main_schema" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('Main_schema');" class="control" /></td>
+                                    <td class="componentGroup">
+                                       <div class="componentGroupTitle">Main Schema</div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="componentGroup"></td>
+                                    <td class="componentGroup">
+                                       <div id="Main_schema" class="componentGroup" style="display:block">
+                                          <div><b><a href="rate_plan_data_output_xsd_Main_schema_rate_plan_data_output_xsd.html#rate_plan_data_output.xsd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component rate_plan_data_output.xsd')">rate_plan_data_output.xsd</a></b></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <table class="componentGroup">
+                              <tbody>
+                                 <tr>
+                                    <td class="componentGroup"><input id="button_Included_schema" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('Included_schema');" class="control" /></td>
+                                    <td class="componentGroup">
+                                       <div class="componentGroupTitle">Included Schemas</div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="componentGroup"></td>
+                                    <td class="componentGroup">
+                                       <div id="Included_schema" class="componentGroup" style="display:block">
+                                          <div><b><a href="charges_xsd_Included_schema_charges_xsd.html#charges.xsd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component charges.xsd')">charges.xsd</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Included_schema_common_definitions_xsd.html#common_definitions.xsd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component common_definitions.xsd')">common_definitions.xsd</a></b></div>
+                                          <div><b><a href="eligibility_xsd_Included_schema_eligibility_xsd.html#eligibility.xsd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component eligibility.xsd')">eligibility.xsd</a></b></div>
+                                          <div><b><a href="holidays_xsd_Included_schema_holidays_xsd.html#holidays.xsd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component holidays.xsd')">holidays.xsd</a></b></div>
+                                          <div><b><a href="minimum_charges_xsd_Included_schema_minimum_charges_xsd.html#minimum_charges.xsd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component minimum_charges.xsd')">minimum_charges.xsd</a></b></div>
+                                          <div><b><a href="nonmetered_service_charges_xsd_Included_schema_nonmetered_service_charges_xsd.html#nonmetered_service_charges.xsd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component nonmetered_service_charges.xsd')">nonmetered_service_charges.xsd</a></b></div>
+                                          <div><b><a href="other_fixed_charges_xsd_Included_schema_other_fixed_charges_xsd.html#other_fixed_charges.xsd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component other_fixed_charges.xsd')">other_fixed_charges.xsd</a></b></div>
+                                          <div><b><a href="rate_plan_modifiers_xsd_Included_schema_rate_plan_modifiers_xsd.html#rate_plan_modifiers.xsd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component rate_plan_modifiers.xsd')">rate_plan_modifiers.xsd</a></b></div>
+                                          <div><b><a href="rate_plans_xsd_Included_schema_rate_plans_xsd.html#rate_plans.xsd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component rate_plans.xsd')">rate_plans.xsd</a></b></div>
+                                          <div><b><a href="seasons_xsd_Included_schema_seasons_xsd.html#seasons.xsd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component seasons.xsd')">seasons.xsd</a></b></div>
+                                          <div><b><a href="service_tier_thresholds_xsd_Included_schema_service_tier_thresholds_xsd.html#service_tier_thresholds.xsd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component service_tier_thresholds.xsd')">service_tier_thresholds.xsd</a></b></div>
+                                          <div><b><a href="time_of_use_periods_xsd_Included_schema_time_of_use_periods_xsd.html#time_of_use_periods.xsd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component time_of_use_periods.xsd')">time_of_use_periods.xsd</a></b></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <table class="componentGroup">
+                              <tbody>
+                                 <tr>
+                                    <td class="componentGroup"><input id="button_Element" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('Element');" class="control" /></td>
+                                    <td class="componentGroup">
+                                       <div class="componentGroupTitle">Elements</div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="componentGroup"></td>
+                                    <td class="componentGroup">
+                                       <div id="Element" class="componentGroup" style="display:block">
+                                          <div><b><a href="common_definitions_xsd_Element_calcIntervalKind.html#calcIntervalKind" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component calcIntervalKind')">calcIntervalKind</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Element_calcIntervalPer.html#calcIntervalPer" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component calcIntervalPer')">calcIntervalPer</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Element_calculationMode.html#calculationMode" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component calculationMode')">calculationMode</a></b></div>
+                                          <div><b><a href="charges_xsd_Element_charges.html#charges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component charges')">charges</a></b></div>
+                                          <div><b><a href="eligibility_xsd_Element_eligibility.html#eligibility" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component eligibility')">eligibility</a></b></div>
+                                          <div><b><a href="holidays_xsd_Element_holidays.html#holidays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component holidays')">holidays</a></b></div>
+                                          <div><b><a href="rate_plan_data_output_xsd_Element_meteredCharge.html#meteredCharge" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component meteredCharge')">meteredCharge</a></b></div>
+                                          <div><b><a href="minimum_charges_xsd_Element_minimumCharges.html#minimumCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component minimumCharges')">minimumCharges</a></b></div>
+                                          <div><b><a href="nonmetered_service_charges_xsd_Element_nonmeteredServiceCharges.html#nonmeteredServiceCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component nonmeteredServiceCharges')">nonmeteredServiceCharges</a></b></div>
+                                          <div><b><a href="other_fixed_charges_xsd_Element_otherFixedCharges.html#otherFixedCharges" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component otherFixedCharges')">otherFixedCharges</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Element_phase.html#phase" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component phase')">phase</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Element_phases.html#phases" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component phases')">phases</a></b></div>
+                                          <div><b><a href="rate_plan_modifiers_xsd_Element_ratePlanModifiers.html#ratePlanModifiers" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanModifiers')">ratePlanModifiers</a></b></div>
+                                          <div><b><a href="rate_plan_data_output_xsd_Element_ratePlanScenario.html#ratePlanScenario" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanScenario')">ratePlanScenario</a></b></div>
+                                          <div><b><a href="rate_plan_data_output_xsd_Element_ratePlanSelection.html#ratePlanSelection" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanSelection')">ratePlanSelection</a></b></div>
+                                          <div><b><a href="rate_plans_xsd_Element_ratePlans.html#ratePlans" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlans')">ratePlans</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Element_scopeOfApplicability.html#scopeOfApplicability" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component scopeOfApplicability')">scopeOfApplicability</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Element_seasonName.html#seasonName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component seasonName')">seasonName</a></b></div>
+                                          <div><b><a href="seasons_xsd_Element_seasons.html#seasons" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component seasons')">seasons</a></b></div>
+                                          <div><b><a href="service_tier_thresholds_xsd_Element_serviceTierThresholds.html#serviceTierThresholds" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceTierThresholds')">serviceTierThresholds</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Element_statisticKind.html#statisticKind" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component statisticKind')">statisticKind</a></b></div>
+                                          <div><b><a href="time_of_use_periods_xsd_Element_timeOfUsePeriods.html#timeOfUsePeriods" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component timeOfUsePeriods')">timeOfUsePeriods</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Element_unitMultiplierPowerOfTen.html#unitMultiplierPowerOfTen" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component unitMultiplierPowerOfTen')">unitMultiplierPowerOfTen</a></b></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <table class="componentGroup">
+                              <tbody>
+                                 <tr>
+                                    <td class="componentGroup"><input id="button_Complex_Type" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('Complex_Type');" class="control" /></td>
+                                    <td class="componentGroup">
+                                       <div class="componentGroupTitle">Complex Types</div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="componentGroup"></td>
+                                    <td class="componentGroup">
+                                       <div id="Complex_Type" class="componentGroup" style="display:block">
+                                          <div><b><a href="eligibility_xsd_Complex_Type_CriterionType.html#CriterionType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component CriterionType')">CriterionType</a></b></div>
+                                          <div><b><a href="eligibility_xsd_Complex_Type_LimitType.html#LimitType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component LimitType')">LimitType</a></b></div>
+                                          <div><b><a href="rate_plans_xsd_Complex_Type_RatePlanType.html#RatePlanType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component RatePlanType')">RatePlanType</a></b></div>
+                                          <div><b><a href="seasons_xsd_Complex_Type_SeasonType.html#SeasonType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component SeasonType')">SeasonType</a></b></div>
+                                          <div><b><a href="service_tier_thresholds_xsd_Complex_Type_ServiceTierThresholdType.html#ServiceTierThresholdType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ServiceTierThresholdType')">ServiceTierThresholdType</a></b></div>
+                                          <div><b><a href="time_of_use_periods_xsd_Complex_Type_TimeOfUsePeriodType.html#TimeOfUsePeriodType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component TimeOfUsePeriodType')">TimeOfUsePeriodType</a></b></div>
+                                          <div><b><a href="charges_xsd_Complex_Type_chargeType.html#chargeType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component chargeType')">chargeType</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Complex_Type_constraintVariableType.html#constraintVariableType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component constraintVariableType')">constraintVariableType</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Complex_Type_dateIntervalType.html#dateIntervalType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component dateIntervalType')">dateIntervalType</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Complex_Type_dateTimeIntervalType.html#dateTimeIntervalType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component dateTimeIntervalType')">dateTimeIntervalType</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Complex_Type_measureType.html#measureType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measureType')">measureType</a></b></div>
+                                          <div><b><a href="rate_plan_modifiers_xsd_Complex_Type_ratePlanModifierType.html#ratePlanModifierType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component ratePlanModifierType')">ratePlanModifierType</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Complex_Type_scopeOfApplicabilityType.html#scopeOfApplicabilityType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component scopeOfApplicabilityType')">scopeOfApplicabilityType</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Complex_Type_tariffDocumentationType.html#tariffDocumentationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component tariffDocumentationType')">tariffDocumentationType</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Complex_Type_timeIntervalType.html#timeIntervalType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component timeIntervalType')">timeIntervalType</a></b></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <table class="componentGroup">
+                              <tbody>
+                                 <tr>
+                                    <td class="componentGroup"><input id="button_Simple_Type" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('Simple_Type');" class="control" /></td>
+                                    <td class="componentGroup">
+                                       <div class="componentGroupTitle">Simple Types</div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="componentGroup"></td>
+                                    <td class="componentGroup">
+                                       <div id="Simple_Type" class="componentGroup" style="display:block">
+                                          <div><b><a href="holidays_xsd_Simple_Type_HolidayNameType.html#HolidayNameType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component HolidayNameType')">HolidayNameType</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Simple_Type_measurementKind.html#measurementKind" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component measurementKind')">measurementKind</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Simple_Type_phaseCodeKind.html#phaseCodeKind" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component phaseCodeKind')">phaseCodeKind</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Simple_Type_seasonNameKind.html#seasonNameKind" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component seasonNameKind')">seasonNameKind</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Simple_Type_serviceKind.html#serviceKind" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component serviceKind')">serviceKind</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Simple_Type_unitSymbolKind.html#unitSymbolKind" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component unitSymbolKind')">unitSymbolKind</a></b></div>
+                                          <div><b><a href="common_definitions_xsd_Simple_Type_valueInclusionKind.html#valueInclusionKind" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component valueInclusionKind')">valueInclusionKind</a></b></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <table class="componentGroup">
+                              <tbody>
+                                 <tr>
+                                    <td class="componentGroup"><input id="button_Attribute" type="image" alt="expand/collapse" src="img/btM.gif" onclick="switchState('Attribute');" class="control" /></td>
+                                    <td class="componentGroup">
+                                       <div class="componentGroupTitle">Attributes</div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="componentGroup"></td>
+                                    <td class="componentGroup">
+                                       <div id="Attribute" class="componentGroup" style="display:block">
+                                          <div><b><a href="common_definitions_xsd_Attribute_ratePlanCodeUnique.html#ratePlanCodeUnique" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for component @ratePlanCodeUnique')">@ratePlanCodeUnique</a></b></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div style="clear:left"></div>
+            </div>
+         </div>
+      </div>
+      <div class="footer">
+         <hr />
+         <div style="text-align:center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor Trial Edition.</div>
+      </div>
+   </body>
+</html>
