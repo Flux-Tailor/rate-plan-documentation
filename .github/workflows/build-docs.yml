@@ -11,22 +11,20 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      # We create another virtual environment to isolate our project dependencies
+           # We create another virtual environment to isolate our project dependencies
       # from the system-wide Python installation. This prevents conflicts with
       # the "externally-managed-environment" and allows us to install packages
       # without affecting the system Python. 
-      - name: Create and activate virtual environment
-        run: |
-          python -m venv venv
-          echo "source venv/bin/activate" >> $GITHUB_ENV
+      - name: Create virtual environment
+        run: python -m venv venv
       - name: Install dependencies
         run: |
-          source venv/bin/activate
+          . venv/bin/activate
           pip install --upgrade pip
           pip install -r requirements.txt
       - name: Sphinx build
         run: |
-          source venv/bin/activate
+          . venv/bin/activate
           sphinx-build doc _build
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -36,3 +34,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/
           force_orphan: true
+          
