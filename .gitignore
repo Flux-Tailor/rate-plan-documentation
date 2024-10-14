@@ -20,3 +20,6 @@ Gemfile.lock
 # virtual env and sphinx build
 _build/
 ve/
+
+# macos file
+.DS_Store
