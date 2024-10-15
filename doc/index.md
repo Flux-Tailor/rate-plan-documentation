@@ -49,7 +49,7 @@ The rate plan schema includes:
 - Links to key resources and sections:
   - [Existing IEDR Rate Plan Browser with rate plan options](https://iedr.nyserda.ny.gov/rate-plan/)
   - [Rate Plan Browser Data Dictionary](https://iedr-public-static-files.s3.amazonaws.com/documentation/IEDR_DataDictionary-RatePlanData_V001_20240112.pdf)
-  - 
+ 
 ### What's the relationship between Utilities, Operating Companies, Service Classes and a “Rate Plan” ?
 
 The relationship between these entities forms the structure of how energy services are organized and priced:
