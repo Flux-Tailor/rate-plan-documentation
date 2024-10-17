@@ -21,9 +21,9 @@ The [Integrated Energy Data Resource (IEDR)](https://iedr.nyserda.ny.gov) is wor
 ### Schema Documentation
   - [GitHub repository hosting XSD schemas](https://github.com/Flux-Tailor/rate-plan-schema)
     
-  - [Rate Plan Schema Docs - all rate plan schemas (v0.99.1)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.99.1/all_rate_plan_schemas/all_rate_plan_schemas.html)
-  - [Rate Plan Schema Docs - rate plan data input (v0.99.1)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.99.1/rate_plan_data_input/rate_plan_data_input.html)
-  - [Rate Plan Schema Docs - rate plan data output (v0.99.1)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.99.1/rate_plan_data_output/rate_plan_data_output.html)
+  - [Rate Plan Schema Docs - all rate plan schemas (v0.99.2)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.99.2/all_rate_plan_schemas/all_rate_plan_schemas.html)
+  - [Rate Plan Schema Docs - rate plan data input (v0.99.2)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.99.1/rate_plan_data_input/rate_plan_data_input.html)
+  - [Rate Plan Schema Docs - rate plan data output (v0.99.2)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.99.1/rate_plan_data_output/rate_plan_data_output.html)
 
 ### Test Cases
   - [GitHub repository hosting XML test instances](https://github.com/Flux-Tailor/rate-plan-test-cases)
