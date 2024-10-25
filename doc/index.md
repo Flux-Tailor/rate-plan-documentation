@@ -72,7 +72,7 @@ For instance:
 - Within it, there are multiple service classes for "Residential" users
 - This service class could have multiple sub service classes and rate plans like "SC-1A Standard Residential" or "SC1B Time-of-Use Residential" each of which are designed to meet different customer needs, usage patterns, or policy objectives.
 
-# Versioning and Upgrade Process
+### Versioning and Upgrade Process
 
 Distinct branches of the specification will be maintained in the Rate Plan Schema Repository for each version of the standard.
 
@@ -95,8 +95,8 @@ You can see a list of all the version upgrades in the Rate Plan Schema by review
 
 The documentation corresponding to the specific versions of the Rate Plan Schema can be found on this site.
 
-# Documentation and Underlying Source
+## Documentation and Underlying Source
 
-Our documentation is versioned and openly available on GitHub. The documentation is built using Sphinx and OxygenXML and published to the web via GitHub Pages for access.
+Our documentation is versioned and openly available on GitHub. The documentation is built using [Sphinx](https://www.sphinx-doc.org/) and [OxygenXML](https://www.oxygenxml.com/) and published to the web via GitHub Pages for conveninet access.
 
 - [GitHub Repository](https://github.com/Flux-Tailor/rate-plan-documentation)
