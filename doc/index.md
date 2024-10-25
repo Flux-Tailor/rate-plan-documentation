@@ -72,8 +72,31 @@ For instance:
 - Within it, there are multiple service classes for "Residential" users
 - This service class could have multiple sub service classes and rate plans like "SC-1A Standard Residential" or "SC1B Time-of-Use Residential" each of which are designed to meet different customer needs, usage patterns, or policy objectives.
 
-# GitHub and Pages
+# Versioning and Upgrade Process
 
-Our documentation will be version-controlled and openly available on GitHub. GitHub Pages is used for easy access to the latest documentation.
+Distinct branches of the specification will be maintained in the Rate Plan Schema Repository for each version of the standard.
+
+Branches can be in one of two distinct states:
+
+ - Development – indicated by a -dev suffix e.g. 3.1-dev. This branch is not yet released and both schema and documentation in it should be considered unstable and experimental.
+ -  Live – indicated by the lack of a suffix e.g 3.1. This branch has been released and tagged, and should be considered stable. Some documentation may be updated on a live branch, but no changes to the schema can be made.
+
+The Rate Plan Schema uses [Semantic Versioning](https://semver.org/) to distinguish between different versions of the standard in the format of MAJOR.MINOR.PATCH.
+
+ - MAJOR versions introduce backwards incompatible changes
+ - MINOR versions introduce new features or functionality in a backwards compatible manner
+ - PATCH versions make backwards-compatible bugfixes
+
+If a change is backwards compatible it means that data published using an earlier version still meets the requirements of the standard. For example data published using version 3.0 would be compatible with version 3.1. 
+
+If a change is not backwards compatible it may mean that data published using an earlier version will no longer meet the requirements. Not all Rate Plan data uses all parts of the standard, so it is possible that some data may still be conformant to a newer MAJOR version but it is not guaranteed.
+
+You can see a list of all the version upgrades in the Rate Plan Schema by reviewing our [changelog](https://github.com/Flux-Tailor/rate-plan-schema/releases).
+
+The documentation corresponding to the specific versions of the Rate Plan Schema can be found on this site.
+
+# Documentation and Underlying Source
+
+Our documentation is versioned and openly available on GitHub. The documentation is built using Sphinx and OxygenXML and published to the web via GitHub Pages for access.
 
 - [GitHub Repository](https://github.com/Flux-Tailor/rate-plan-documentation)
