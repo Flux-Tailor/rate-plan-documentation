@@ -1,0 +1,13 @@
+{# _templates/search-field.html #}
+<div class="bd-search-container">
+    <form class="bd-search" action="{{ pathto('search') }}" method="get">
+        <input type="search" 
+               class="form-control"
+               name="q" 
+               placeholder="{{ _('Search docs') }}" 
+               aria-label="Search docs">
+        <input type="submit" 
+               value="Search"
+               class="btn">
+    </form>
+</div>
