@@ -17,8 +17,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install sphinx-design
           pip install -r requirements.txt
+          pip install sphinx-design
       - name: Sphinx build
         run: sphinx-build doc _build
       - name: Deploy to GitHub Pages
