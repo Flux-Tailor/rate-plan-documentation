@@ -5,13 +5,12 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
+import os
+import sys
 project = 'Rate Plan Schema Documentation'
 copyright = 'NYSERDA'
 author = 'Flux Tailor'
 release = '0.1'
-
-
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
@@ -37,11 +36,13 @@ html_theme_options = {
 
 html_static_path = ['_static','OxygenDocs']
 html_css_files = ['css/custom.css']
+html_js_files = ['js/accessibility.js'] 
 googleanalytics_id = "G-8VML9CQJGL"
 
-# Enables the Google Analytics extension when the site is being built in the GitHub Actions environment
-import os
+
+
 
 if os.getenv("GITHUB_ACTIONS"):
   extensions.append("sphinxcontrib.googleanalytics")
   googleanalytics_id = "G-8VML9CQJGL"
+sys.path.insert(0, os.path.abspath('_ext'))
