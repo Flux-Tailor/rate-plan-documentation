@@ -20,11 +20,12 @@ jobs:
           pip install -r requirements.txt
       - name: Sphinx build
         run: sphinx-build doc _build
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+      - name Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          publish_branch: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _build/
-          force_orphan: true
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          aws-region: us-east-2      
+      - name: Deploy to S3 Staging bucket - rate-plan-documentation-staging
+        run: |
+            aws s3 ls rate-plan-documentation-staging
