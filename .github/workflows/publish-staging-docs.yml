@@ -28,5 +28,5 @@ jobs:
           aws-region: us-east-2      
       - name: Deploy to S3 Staging bucket - rate-plan-documentation-staging
         run: |
-            aws s3 rm rate-plan-documentation-staging --recursive
-            aws s3 sync _build/* rate-plan-documentation-staging --exclude rate-plan-schema-docs
+            aws s3 rm s3://rate-plan-documentation-staging --recursive
+            aws s3 sync _build/* s3://rate-plan-documentation-staging --exclude rate-plan-schema-docs
