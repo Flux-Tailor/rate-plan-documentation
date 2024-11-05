@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -28,4 +30,5 @@ jobs:
           aws-region: us-east-2      
       - name: Deploy to S3 Staging bucket - rate-plan-documentation-staging
         run: |
-            aws s3 ls rate-plan-documentation-staging
+            aws s3 rm s3://rate-plan-documentation-staging --recursive
+            aws s3 sync _build s3://rate-plan-documentation-staging --exclude "*rate-plan-schema-docs/*"
