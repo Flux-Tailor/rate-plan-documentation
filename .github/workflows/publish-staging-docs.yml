@@ -1,12 +1,6 @@
 name: publish-staging-docs
 
-on: 
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
-        required: true
+on: [workflow_dispatch]
 
 permissions:
   contents: write
@@ -17,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.environment }}
+          ref: ${{ github.ref }}
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
