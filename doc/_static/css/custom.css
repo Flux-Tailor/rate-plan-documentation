@@ -166,7 +166,7 @@ td {
 [data-theme="dark"] .bd-search input[type="search"]::placeholder {
   color: var(--search-placeholder);
 }
-
+/* Custom Submit button*/
 .bd-search input[type="submit"] {
   background: var(--nyserda-gold) !important;
   color: #000000 !important;
@@ -178,9 +178,21 @@ td {
   margin-top: 6px;
   font-weight: bold;
 }
-
+/* Hovering effect */
 .bd-search input[type="submit"]:hover {
   opacity: 0.9;
+}
+/* Focus styles for button */
+.bd-search input[type="submit"]:focus {
+  outline: 2px solid var(--nyserda-gold);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(var(--nyserda-gold-rgb), 0.25);
+  opacity: 0.9;
+}
+/* Dark theme focus styles */
+[data-theme="dark"] .bd-search input[type="submit"]:focus {
+    outline-color: var(--nyserda-gold);
+    box-shadow: 0 0 0 2px rgba(var(--nyserda-gold-rgb), 0.4);
 }
 
 [data-theme="dark"] .bd-search input[type="submit"],
@@ -269,7 +281,7 @@ h1.main-title {
     display: none !important;
 }
 
-/* On search results page*/
+/* On search results page between "Search" and search container*/
 .bd-search-container h1 {
   margin-bottom: 2rem !important;
 }
