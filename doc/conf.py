@@ -51,7 +51,7 @@ html_theme_options = {
 
 
     "search_bar_text": "Search docs...",
-    "search_bar_position": "sidebar",  # Keep search in sidebar
+    "search_bar_position": "sidebar",  # Keep search in the sidebar
 
     # Sidebar behavior
     "collapse_navigation": False,
@@ -61,7 +61,6 @@ html_theme_options = {
     "navbar_align": "content",
     "navbar_center": ["navbar-nav"],
     
-    # Icons and links
     "icon_links": [
         {
             "name": "GitHub",
@@ -99,8 +98,9 @@ html_copy_source = True
 html_show_sphinx = True
 
 # Paths and files
-html_static_path = ['_static','OxygenDocs']
+html_static_path = ['_static']
 html_css_files = ['css/custom.css']
+html_js_files = ['js/custom.js']
 
 # Sidebar customization
 html_sidebars = {
@@ -113,6 +113,4 @@ googleanalytics_id = "G-8VML9CQJGL"
 if os.getenv("GITHUB_ACTIONS"):
   extensions.append("sphinxcontrib.googleanalytics")
   googleanalytics_id = "G-8VML9CQJGL"
-
-# Extension path
 sys.path.insert(0, os.path.abspath('_ext'))

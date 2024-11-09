@@ -83,7 +83,8 @@ If a change is backwards compatible it means that data published using an earlie
 
 If a change is not backwards compatible it may mean that data published using an earlier version will no longer meet the requirements. Not all Rate Plan data uses all parts of the standard, so it is possible that some data may still be conformant to a newer MAJOR version but it is not guaranteed.
 
-You can see a list of all the version upgrades in the Rate Plan Schema by reviewing our [changelog](https://github.com/Flux-Tailor/rate-plan-schema/releases).
+You can see a list of all the version upgrades in the Rate Plan Schema by reviewing our 
+[changelog.](https://github.com/Flux-Tailor/rate-plan-schema/releases)
 
 The documentation corresponding to the specific versions of the Rate Plan Schema can be found on this site.
 
