@@ -60,7 +60,7 @@ html_theme_options = {
     # Header/navbar options
     "navbar_align": "content",
     "navbar_center": ["navbar-nav"],
-    
+
     "icon_links": [
         {
             "name": "GitHub",
@@ -69,7 +69,7 @@ html_theme_options = {
             "type": "fontawesome",
         }
     ],
-    
+
     # Accessibility improvements
     "primary_sidebar_header": {
          "title": " ", 
@@ -77,7 +77,7 @@ html_theme_options = {
     
     # Footer
     "footer_items": ["copyright", "sphinx-version", "theme-version"],
-    
+
     # Use bootstrap icons
     "use_fontawesome": True,
 }
@@ -100,11 +100,10 @@ html_show_sphinx = True
 # Paths and files
 html_static_path = ['_static']
 html_css_files = ['css/custom.css']
-html_js_files = ['js/custom.js']
 
 # Sidebar customization
 html_sidebars = {
-    "**": ["search-field.html", "sidebar-nav-bs"]
+    "**": ["search-field.html","sidebar-nav-bs"]
 }
 
 # Google Analytics

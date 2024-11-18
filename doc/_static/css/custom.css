@@ -5,7 +5,6 @@
 :root {
   --nyserda-blue: #1d428a;
   --nyserda-gold: #f2a900;
-  --heading-color: var(--nyserda-blue);
 }
 
 /* Dark mode colors */
@@ -22,46 +21,15 @@
   }
 }
 
-/* Global typography */
-h1, h2, h3, h4, h5, h6,
-.bd-sidebar-primary .sidebar-primary-items__start .sidebar-primary-item,
-.bd-article-container h1,
-.bd-article-container h2,
-.bd-article-container h3,
-.bd-article-container h4,
-.bd-article-container h5,
-.bd-article-container h6,
-#rate-plan-schema-documentation h1 {
+/* Font for headings*/
+.bd-content h1,
+.bd-content h2,
+.bd-content h3,
+.bd-content h4,
+.bd-content h5,
+.bd-content h6,
+.bd-header-article h1 {
     font-family: Lato, proxima-nova, "Helvetica Neue", Arial, sans-serif !important;
-}
-
-/* Sidebar styling */
-.bd-sidebar-primary,
-.sidebar-primary-items__end {
-  background-color: #404040 !important;
-}
-
-.bd-sidebar .caption-text {
-  color: var(--nyserda-gold);
-  font-weight: 600;
-}
-
-.bd-sidebar .nav {
-  margin-left: 0;
-  list-style: none;
-}
-
-.bd-sidebar .nav-link {
-  padding: 0.5rem 1rem;
-  display: block;
-  color: var(--pst-color-text-base);
-  text-decoration: none;
-}
-
-.bd-sidebar .nav-link:hover,
-.bd-sidebar .nav-link:focus {
-  background-color: rgba(var(--nyserda-blue), 0.1);
-  color: var(--nyserda-blue);
 }
 
 /* Link styling */
@@ -82,106 +50,24 @@ a.pdf-link::after {
   content: "📄" !important;
 }
 
-/* Accessibility features */
-a:focus, button:focus, input:focus {
-  outline: 3px solid var(--nyserda-gold);
-  outline-offset: 2px;
+/* Sidebar styling background*/
+.bd-sidebar-primary{
+  background-color: #404040 !important;
 }
 
-.skip-to-content {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--nyserda-blue);
-  color: white;
-  padding: 8px;
-  z-index: 100;
-  transition: top 0.2s ease-in-out;
-}
+/** Accessibility fixes* */
 
-.skip-to-content:focus {
-  top: 0;
-}
-/*    Handle svg image aria issue*/
-svg[role="img"]:not([aria-label]) {
-  role: "presentation";
-  aria-hidden: "true";
-}
-
-.form-control:focus {
-  outline: 2px solid #007bff;
-  outline-offset: 2px;
-  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
-}
-
-/* Table styling */
-table {
-  width: 100%;
-  margin-bottom: 1rem;
-  border-collapse: collapse;
-}
-
-th {
-  background-color: var(--nyserda-blue);
-  color: white;
-  padding: 0.75rem;
-  border: 1px solid #dee2e6;
-}
-
-td {
-  padding: 0.75rem;
-  border: 1px solid #dee2e6;
-}
-
-/* Search styling */
-.bd-search {
-  background-color: var(--nyserda-blue) !important;
-  padding: 1rem !important;
-  margin-top: -1.9rem !important;
-  margin-right: -2rem !important;
-  margin-bottom: 0 !important;
-  margin-left: 0 rem !important;  
-  width: 100% !important;
-  border-radius: 0 !important;
-}
-
-.bd-search input[type="search"] {
-  width: 100%;
-  padding: 8px;
-  border: 2px solid var(--nyserda-gold);
-  border-radius: 4px;
-  margin-bottom: 8px;
-  background-color: white;
-}
-.bd-search input[type="search"]::placeholder {
-  color: var(--search-placeholder);
-  opacity: 1; 
-}
-
-[data-theme="dark"] .bd-search input[type="search"] {
-  background-color: #14181e;  /* Dark background */
-  color: #ffffff;  /* Light text */
-}
-
-[data-theme="dark"] .bd-search input[type="search"]::placeholder {
-  color: var(--search-placeholder);
-}
 /* Custom Submit button*/
 .bd-search input[type="submit"] {
   background: var(--nyserda-gold) !important;
   color: #000000 !important;
-  border: none !important;
-  border-radius: 4px !important;
-  padding: 6px 12px !important;
   width: 100% !important;
-  cursor: pointer;
-  margin-top: 6px;
-  font-weight: bold;
 }
 /* Hovering effect */
 .bd-search input[type="submit"]:hover {
   opacity: 0.9;
 }
+
 /* Focus styles for button */
 .bd-search input[type="submit"]:focus {
   outline: 2px solid var(--nyserda-gold);
@@ -195,94 +81,70 @@ td {
     box-shadow: 0 0 0 2px rgba(var(--nyserda-gold-rgb), 0.4);
 }
 
-[data-theme="dark"] .bd-search input[type="submit"],
-[data-theme="dark"] .bd-search .search-button,
-[data-theme="dark"] .bd-search .btn-outline-primary {
+[data-theme="dark"] .bd-search input[type="submit"]{
   color: black !important;
 }
-
-/* Header and title styling */
-.bd-header-article {
-  display: none;
+a:focus, button:focus, input:focus { /* places gold border around what you click*/
+  outline: 3px solid var(--nyserda-gold);
+  outline-offset: 2px;
 }
 
-h1.main-title {
-  margin-top: 5rem !important;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--nyserda-gold);
+/* Necessary visible focus indicator, focus for old browswers and focus-visible for modern broswers*/
+.pst-navbar-icon.sidebar-toggle:focus,
+.pst-navbar-icon.sidebar-toggle:focus-visible {
+    outline: 3px solid var(--nyserda-gold);
+    outline-offset: 2px;
 }
 
-.bd-main .bd-content {
-  padding-top: 0.5rem;
+/* Slight contrast fix between foreground & background*/
+[data-theme="dark"] .bd-search input[type="search"] {
+  background-color: #14181e;  /* Dark background */
 }
 
-.bd-sidebar h1:first-child {
-  display: none;
+/* The entire search input container*/
+.bd-search {
+  background-color: var(--nyserda-blue) !important;
+  padding: 1rem !important;
+  margin-top: -1.9rem !important;
+  margin-right: -2rem !important;
+  width: 100% !important;
+}
+/* The search field */
+.bd-search input[type="search"] {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid var(--nyserda-gold);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background-color: white;
 }
 
-.navbar-header-items__center {
-  display: none;
-}
-
-.navbar-header-items__center .nav-link {
-  visibility: hidden;
-}
-
-/* Documentation specific styling */
-#rate-plan-schema-documentation h1 {
-  font-size: 2.6rem;
-  margin: 1rem 0 2rem 0;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--nyserda-gold);
-  color: var(--nyserda-blue);
-}
-
-.bd-article-container > section:not(#rate-plan-schema-documentation) > h1 {
-  font-size: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-.bd-article-container h2 {
-  font-size: 1.8rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.bd-article-container h3 {
-  font-size: 1.5rem;
-  margin-top: 1.2rem;
-  margin-bottom: 0.8rem;
-}
-
-.bd-article-container h4 {
-  font-size: 1.3rem;
-  margin-top: 1rem;
-  margin-bottom: 0.6rem;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-}
-
-/* Print styles */
-@media print {
-  a::after {
-    display: none !important;
-  }
-}
-/* Hiding pydata theme search field*/
-.search-button-field,
-.navbar-persistent--mobile {
-    display: none !important;
-}
-
-/* On search results page between "Search" and search container*/
+/* On search results page between "Search" and search container fixing overlap since we created our own*/
 .bd-search-container h1 {
   margin-bottom: 2rem !important;
 }
 
+/* Hiding pydata theme search field (Upate: this can be done with html)*/
+/* .search-button-field,
+.navbar-persistent--mobile {
+    display: none !important;
+} */
+
+/* Make links visually distinguishable */
+.bd-article a:not(.headerlink):not(.nav-link):not(.btn) {
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px !important;
+}
+
+
+/* Element highlight on focus */
+a:focus, button:focus {
+  outline: 2px solid var(--nyserda-gold) !important;
+  outline-offset: 2px !important;
+}
+
+
+/* Enhance link visibility to get rid of link distinguishability error */
+a:not(.nav-link):not(.navbar-brand):not(.btn) {
+  text-decoration: underline;
+}
