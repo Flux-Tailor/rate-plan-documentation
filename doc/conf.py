@@ -100,6 +100,7 @@ html_show_sphinx = True
 # Paths and files
 html_static_path = ['_static']
 html_css_files = ['css/custom.css']
+html_js_files = ['js/custom.js']
 
 # Sidebar customization
 html_sidebars = {
@@ -113,3 +114,13 @@ if os.getenv("GITHUB_ACTIONS"):
   extensions.append("sphinxcontrib.googleanalytics")
   googleanalytics_id = "G-8VML9CQJGL"
 sys.path.insert(0, os.path.abspath('_ext'))
+
+def setup(app):
+    app.connect("builder-inited", lambda app: print(f"\nTemplate paths: {app.builder.templates.pathchain}\nSidebars: {app.config.html_sidebars}"))
+def setup(app):
+    app.connect("builder-inited", lambda app: print(f"""
+    Debug info:
+    Templates path: {app.srcdir}/_templates
+    Template exists: {os.path.exists(os.path.join(app.srcdir, '_templates', 'sidebar-nav-bs.html'))}
+    Template contents: {open(os.path.join(app.srcdir, '_templates', 'sidebar-nav-bs.html')).read() if os.path.exists(os.path.join(app.srcdir, '_templates', 'sidebar-nav-bs.html')) else 'File not found'}
+    """))

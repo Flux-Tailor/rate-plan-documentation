@@ -125,10 +125,10 @@ a:focus, button:focus, input:focus { /* places gold border around what you click
 }
 
 /* Hiding pydata theme search field (Upate: this can be done with html)*/
-/* .search-button-field,
+.search-button-field,
 .navbar-persistent--mobile {
     display: none !important;
-} */
+}
 
 /* Make links visually distinguishable */
 .bd-article a:not(.headerlink):not(.nav-link):not(.btn) {

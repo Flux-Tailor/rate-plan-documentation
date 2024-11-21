@@ -1,27 +1,20 @@
-{# _templates/search-field.html #}
-<!--OVERRIDE TEST-->
-{%- extends "pydata_sphinx_theme/components/search-field.html" %}
-
-{%- block search_field %}
-<div class="sidebar-primary-item">
-       <form class="bd-search d-flex align-items-center"
-       action="{{ pathto('search') }}"
-       method="get">
-   <i class="fa-solid fa-magnifying-glass"></i>
-   <input type="search"
-          class="form-control"
-          name="q"
-          placeholder="{{ theme_search_bar_text }}"
-          aria-label="{{ theme_search_bar_text }}"
-          autocomplete="off"
-          autocorrect="off"
-          autocapitalize="off"
-          spellcheck="false"/>
-    <input type="submit" 
-           value="Search"
-           class="btn btn-primary ms-2"/>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-  </form>
-</div>
-{%- endblock search_field %}
-
+{# Displays an interactive search field directly on the page. #}
+<!--Override, only difference is button addition and removing short cut-->
+<form class="bd-search d-flex align-items-center"
+      action="{{ pathto('search') }}"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="{{ theme_search_bar_text }}"
+         aria-label="{{ theme_search_bar_text }}"
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <input type="submit" 
+         value="Search"
+         class="btn btn-primary ms-2"/>
+  <!-- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span> -->
+</form>
