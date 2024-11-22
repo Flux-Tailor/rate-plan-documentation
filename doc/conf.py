@@ -58,9 +58,6 @@ html_theme_options = {
     "toggle_primary_sidebar": True,
     
     # Header/navbar options
-    "navbar_align": "content",
-    "navbar_center": ["navbar-nav"],
-
     "icon_links": [
         {
             "name": "GitHub",
@@ -104,7 +101,7 @@ html_js_files = ['js/custom.js']
 
 # Sidebar customization
 html_sidebars = {
-    "**": ["search-field.html","sidebar-nav-bs"]
+    "**": ["search-field"]
 }
 
 # Google Analytics
@@ -115,12 +112,3 @@ if os.getenv("GITHUB_ACTIONS"):
   googleanalytics_id = "G-8VML9CQJGL"
 sys.path.insert(0, os.path.abspath('_ext'))
 
-def setup(app):
-    app.connect("builder-inited", lambda app: print(f"\nTemplate paths: {app.builder.templates.pathchain}\nSidebars: {app.config.html_sidebars}"))
-def setup(app):
-    app.connect("builder-inited", lambda app: print(f"""
-    Debug info:
-    Templates path: {app.srcdir}/_templates
-    Template exists: {os.path.exists(os.path.join(app.srcdir, '_templates', 'sidebar-nav-bs.html'))}
-    Template contents: {open(os.path.join(app.srcdir, '_templates', 'sidebar-nav-bs.html')).read() if os.path.exists(os.path.join(app.srcdir, '_templates', 'sidebar-nav-bs.html')) else 'File not found'}
-    """))

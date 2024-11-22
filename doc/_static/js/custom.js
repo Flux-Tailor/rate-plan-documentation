@@ -1,5 +1,4 @@
 // _static/js/custom.js
-
 function updateFAIcons() {
     document.querySelectorAll('.svg-inline--fa').forEach(icon => {
         icon.setAttribute('role', 'presentation');

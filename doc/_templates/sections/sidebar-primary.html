@@ -1,0 +1,47 @@
+{% block docs_sidebar %}
+{% if theme_navbar_center or theme_navbar_end or sidebars or theme_primary_sidebar_end %}
+  {# Header items that will be displayed in the sidebar on mobile #}
+  <div class="sidebar-header-items sidebar-primary__section" role="complementary" aria-label="Primary sidebar">
+    {# The header center items #}
+    {% if theme_navbar_center %}
+    <!--This wraps the navigation items in a nav landmark to make them discoverable by screen readers.
+        The aria-label provides a unique name to distinguish it from other navigation sections.-->
+      <nav class="sidebar-header-items__center" aria-label="Site navigation"> 
+        {% for navbar_item in theme_navbar_center %}
+          {#
+            In the mobile sidebar we do not want a dropdown, so set a large cutoff (999).
+          #}
+          {% with theme_header_links_before_dropdown=999 %}
+            <div class="navbar-item">{% include navbar_item %}</div>
+          {% endwith %}
+        {% endfor %}
+      </nav>
+    {% endif %}
+    {# The header end items #}
+    {% if theme_navbar_end %}
+    <!-- Theme switcher and GitHub links are a different type of navigation; settings/external links.
+         Using nav with a distinct aria-label helps screen reader users understand this is a different navigation area. -->
+      <nav class="sidebar-header-items__end" aria-label="Site settings"> 
+        {% for navbar_item in theme_navbar_end %}
+          <div class="navbar-item">{% include navbar_item %}</div>
+        {% endfor %}
+      </nav>
+    {% endif %}
+  </div>
+  {% if sidebars %}
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+      {%- for sidebartemplate in sidebars %}
+      <!-- The search form needs a search landmark role to identify it as a search functionality.
+           This helps screen reader users quickly locate the search feature on the page. -->
+        <div class="sidebar-primary-item" role="search">{%- include sidebartemplate %}</div>
+      {%- endfor %}
+    </div>
+  {% endif %}
+  {# Items that will snap to the bottom of the screen #}
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+    {%- for sidebartemplate in theme_primary_sidebar_end %}
+      <div class="sidebar-primary-item">{%- include sidebartemplate %}</div>
+    {%- endfor %}
+  </div>
+{% endif %}
+{% endblock docs_sidebar %}
