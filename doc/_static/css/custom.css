@@ -45,60 +45,28 @@ a:not(.headerlink):not(.bd-footer-link):not(.navbar-brand):not(.nav-link)::after
   font-size: 0.85em;
 }
 
-/* PDF link styling */
+.bd-article a:not(.headerlink):not(.nav-link):not(.btn):not(.logo__title),
+a:not(.nav-link):not(.navbar-brand):not(.btn):not(.logo__title) {
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px !important;
+}
+
 a.pdf-link::after {
   content: "📄" !important;
 }
 
-/* Sidebar styling background*/
-.bd-sidebar-primary{
-  background-color: #404040 !important;
-}
 
-/** Accessibility fixes* */
-
-/* Custom Submit button*/
-.bd-search input[type="submit"] {
-  background: var(--nyserda-gold) !important;
-  color: #000000 !important;
-  width: 100% !important;
+/* Focus states except for logo, places gold border around what you click*/
+a:not(.navbar-brand):focus, 
+button:focus, 
+input:focus {
+   outline: 3px solid var(--nyserda-gold);
+   outline-offset: 2px;
 }
-/* Hovering effect */
-.bd-search input[type="submit"]:hover {
-  opacity: 0.9;
-}
-
-/* Focus styles for button */
-.bd-search input[type="submit"]:focus {
-  outline: 2px solid var(--nyserda-gold);
-  outline-offset: 2px;
-  box-shadow: 0 0 0 2px rgba(var(--nyserda-gold-rgb), 0.25);
-  opacity: 0.9;
-}
-/* Dark theme focus styles */
-[data-theme="dark"] .bd-search input[type="submit"]:focus {
-    outline-color: var(--nyserda-gold);
-    box-shadow: 0 0 0 2px rgba(var(--nyserda-gold-rgb), 0.4);
-}
-
-[data-theme="dark"] .bd-search input[type="submit"]{
-  color: black !important;
-}
-a:focus, button:focus, input:focus { /* places gold border around what you click*/
-  outline: 3px solid var(--nyserda-gold);
-  outline-offset: 2px;
-}
-
-/* Necessary visible focus indicator, focus for old browswers and focus-visible for modern broswers*/
 .pst-navbar-icon.sidebar-toggle:focus,
 .pst-navbar-icon.sidebar-toggle:focus-visible {
     outline: 3px solid var(--nyserda-gold);
     outline-offset: 2px;
-}
-
-/* Slight contrast fix between foreground & background*/
-[data-theme="dark"] .bd-search input[type="search"] {
-  background-color: #14181e;  /* Dark background */
 }
 
 /* The entire search input container*/
@@ -112,38 +80,54 @@ a:focus, button:focus, input:focus { /* places gold border around what you click
     margin-top: -1.9rem !important;
     margin-right: -2rem !important;
     width: 100% !important;
-  }
+}
   /* The search field */
-  .bd-search input[type="search"] {
+.bd-search input[type="search"] {
     width: 100%;
     padding: 8px;
     border: 2px solid var(--nyserda-gold);
     border-radius: 4px;
     background-color: white;
     margin: 0;
-  }
-  
+}
+
+.bd-search input[type="submit"] {
+    background: var(--nyserda-gold) !important;
+    color: #000000 !important;
+    width: 100% !important;
+}
+
+.bd-search input[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+.bd-search input[type="submit"]:focus {
+    outline: 2px solid var(--nyserda-gold);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px rgba(var(--nyserda-gold-rgb), 0.25);
+    opacity: 0.9;
+}
+
+[data-theme="dark"] .bd-search input[type="search"] {
+    background-color: #14181e;
+}
+
+[data-theme="dark"] .bd-search input[type="submit"] {
+    color: black !important;
+}
+
+/* Layout */
+.bd-sidebar-primary {
+    background-color: #404040 !important;
+}
+
 /* On search results page between "Search" and search container fixing overlap since we created our own*/
 .bd-search-container h1 {
-  margin-bottom: 2rem !important;
+    margin-bottom: 2rem !important;
 }
 
 /* Hiding pydata theme search field (Upate: this can be done with html)*/
 .search-button-field,
 .navbar-persistent--mobile {
     display: none !important;
-}
-
-/* Ensure all non-navigation links are underlined for better visibility */
-.bd-article a:not(.headerlink):not(.nav-link):not(.btn),
-a:not(.nav-link):not(.navbar-brand):not(.btn) {
- text-decoration: underline !important;
- text-decoration-thickness: 1px !important;
-}
-  
-
-/* Element highlight on focus */
-a:focus, button:focus {
-  outline: 2px solid var(--nyserda-gold) !important;
-  outline-offset: 2px !important;
 }

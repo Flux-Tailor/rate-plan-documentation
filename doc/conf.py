@@ -57,7 +57,7 @@ html_theme_options = {
     "collapse_navigation": False,
     "toggle_primary_sidebar": True,
     
-    # Header/navbar options
+    # Header options
     "icon_links": [
         {
             "name": "GitHub",
@@ -95,13 +95,13 @@ html_copy_source = True
 html_show_sphinx = True
 
 # Paths and files
-html_static_path = ['_static']
+html_static_path = ['_static','OxygenDocs']
 html_css_files = ['css/custom.css']
 html_js_files = ['js/custom.js']
 
 # Sidebar customization
 html_sidebars = {
-    "**": ["search-field"]
+    "**": ["search-field.html"]
 }
 
 # Google Analytics

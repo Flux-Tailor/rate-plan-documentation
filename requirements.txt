@@ -13,3 +13,4 @@ sphinxcontrib-serializinghtml==2.0.0
 urllib3==2.2.3
 sphinxcontrib-googleanalytics==0.4
 pydata-sphinx-theme
+sphinx-design==0.5.0
