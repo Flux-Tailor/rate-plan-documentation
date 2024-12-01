@@ -44,12 +44,13 @@ html_theme_options = {
     "show_nav_level": 2,
     "navigation_depth": 4,
     "show_toc_level": 2,
+
     
-    # Remove version from title
-    "show_version": False,
-    "display_version": False,
-
-
+    # Navbar configuration
+    "navbar_start": ["navbar-logo"],
+    "navbar_end": ["navbar-icon-links", "theme-switcher"],
+    "navbar_center": ["navbar-nav"],
+    
     "search_bar_text": "Search docs...",
     "search_bar_position": "sidebar",  # Keep search in the sidebar
 

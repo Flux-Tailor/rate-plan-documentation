@@ -4,6 +4,15 @@ title: Rate Plan Schema Documentation
 
 # Rate Plan Schema Documentation
 
+```{toctree}
+:maxdepth: 4
+:caption: Documentation
+
+overview/index
+schema/index
+guides/index
+```
+
 ## Introduction
 
 The [Integrated Energy Data Resource (IEDR)](https://iedr.nyserda.ny.gov) is working to improve access to rate plan data. This website and its associated schema and test case repositories support the development of a new data schema and data transfer standard for energy rate plan data. The schema will expand on the rate plan data made available in the current [IEDR Rate Plan Browser](https://iedr.nyserda.ny.gov/rate-plan/) data set to include all Rate Plan parameters needed for cost modeling. The rate plan schema is designed to standardize the representation of energy rate plans. 

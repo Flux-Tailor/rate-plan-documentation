@@ -8,9 +8,9 @@
         The aria-label provides a unique name to distinguish it from other navigation sections.-->
       <nav class="sidebar-header-items__center" aria-label="Site navigation"> 
         {% for navbar_item in theme_navbar_center %}
-          {#
-            In the mobile sidebar we do not want a dropdown, so set a large cutoff (999).
-          #}
+        {#
+          In the mobile sidebar we do not want a dropdown, so set a large cutoff (999).
+        #}
           {% with theme_header_links_before_dropdown=999 %}
             <div class="navbar-item">{% include navbar_item %}</div>
           {% endwith %}
@@ -30,10 +30,21 @@
   </div>
   {% if sidebars %}
     <div class="sidebar-primary-items__start sidebar-primary__section">
+      {# Only include the first search form with a unique aria-label #}
+      {% set search_included = false %}
       {%- for sidebartemplate in sidebars %}
       <!-- The search form needs a search landmark role to identify it as a search functionality.
            This helps screen reader users quickly locate the search feature on the page. -->
-        <div class="sidebar-primary-item" role="search">{%- include sidebartemplate %}</div>
+        {% if 'search' in sidebartemplate and not search_included %}
+          <div class="sidebar-primary-item" role="search" aria-label="Main site search">
+            {%- include sidebartemplate %}
+          </div>
+          {% set search_included = true %}
+        {% elif 'search' not in sidebartemplate %}
+          <div class="sidebar-primary-item">
+            {%- include sidebartemplate %}
+          </div>
+        {% endif %}
       {%- endfor %}
     </div>
   {% endif %}
