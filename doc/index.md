@@ -88,6 +88,10 @@ You can see a list of all the version upgrades in the Rate Plan Schema by review
 
 The documentation corresponding to the specific versions of the Rate Plan Schema can be found on this site.
 
+## User Feedback 
+
+We welcome your feedback on the Rate Plan Schema!  We regularly monitor the [GitHub Issues Board](https://github.com/Flux-Tailor/rate-plan-schema/issues), where you can file bug reports, suggestions as well as share other feedback.  To create an issue you must log in with a GitHub account, which you can create if you do not already have one.
+
 ## Documentation and Underlying Source
 
 Our documentation is versioned and openly available on GitHub. The documentation is built using [Sphinx](https://www.sphinx-doc.org/) and [OxygenXML](https://www.oxygenxml.com/) and published to the web via GitHub Pages for access.
