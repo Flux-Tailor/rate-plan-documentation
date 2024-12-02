@@ -51,7 +51,6 @@ html_theme_options = {
     "navbar_end": ["navbar-icon-links", "theme-switcher"],
     "navbar_center": ["navbar-nav"],
     
-    "search_bar_text": "Search docs...",
     "search_bar_position": "sidebar",  # Keep search in the sidebar
 
     # Sidebar behavior
@@ -102,7 +101,7 @@ html_js_files = ['js/custom.js']
 
 # Sidebar customization
 html_sidebars = {
-    "**": ["search-field.html"]
+    "**": ["search-field.html", "sidebar-nav-bs.html"]
 }
 
 # Google Analytics

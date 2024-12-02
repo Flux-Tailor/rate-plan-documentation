@@ -63,6 +63,8 @@ input:focus {
    outline: 3px solid var(--nyserda-gold);
    outline-offset: 2px;
 }
+
+/* Necessary visible focus indicator, focus for old browswers and focus-visible for modern broswers*/
 .pst-navbar-icon.sidebar-toggle:focus,
 .pst-navbar-icon.sidebar-toggle:focus-visible {
     outline: 3px solid var(--nyserda-gold);
@@ -90,7 +92,7 @@ input:focus {
     background-color: white;
     margin: 0;
 }
-
+/* Custom Submit button*/
 .bd-search input[type="submit"] {
     background: var(--nyserda-gold) !important;
     color: #000000 !important;
@@ -130,4 +132,10 @@ input:focus {
 .search-button-field,
 .navbar-persistent--mobile {
     display: none !important;
+}
+
+/* For nested sidebar naviagation*/
+.bd-links__title,
+.bd-links .reference.internal {
+    color: #ffffff !important; /* White text for maximum contrast against grey sidebar layout*/
 }
