@@ -101,7 +101,7 @@ html_js_files = ['js/custom.js']
 
 # Sidebar customization
 html_sidebars = {
-    "**": ["search-field.html", "sidebar-nav-bs.html"]
+    "**": ["search-field.html", "ft-sidebar-nav.html"]
 }
 
 # Google Analytics
