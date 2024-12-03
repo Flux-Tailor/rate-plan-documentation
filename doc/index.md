@@ -6,11 +6,10 @@ title: Rate Plan Schema Documentation
 
 ```{toctree}
 :maxdepth: 4
-:caption: Documentation
+:caption: Documentation Pages
 
-overview/index
-schema/index
-guides/index
+
+flux-tailor-overview/index
 ```
 
 ## Introduction
