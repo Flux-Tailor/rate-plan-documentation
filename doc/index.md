@@ -8,13 +8,13 @@ title: Rate Plan Schema Documentation
 :maxdepth: 4
 :hidden:
 
-self
+Introduction <self>
+pages/data-schema-resources
+pages/test-cases
 pages/data-inputs
 pages/data-output-access
-pages/data-schema-resources
-pages/faqs
 pages/feedback
-pages/test-cases
+pages/faqs
 ```
 
 ## Introduction

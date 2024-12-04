@@ -45,10 +45,20 @@ a:not(.headerlink):not(.bd-footer-link):not(.navbar-brand):not(.nav-link)::after
   font-size: 0.85em;
 }
 
+/* Remove the 🔗 icon from sidebar links */
+.bd-sidebar .bd-links a:not(.headerlink)::after {
+  content: none !important;
+}
+
 .bd-article a:not(.headerlink):not(.nav-link):not(.btn):not(.logo__title),
 a:not(.nav-link):not(.navbar-brand):not(.btn):not(.logo__title) {
   text-decoration: underline !important;
   text-decoration-thickness: 1px !important;
+}
+
+/* Override the general underline rule specifically for sidebar links */
+.bd-sidebar .bd-links a:not(.headerlink):not(.nav-link):not(.btn):not(.logo__title) {
+  text-decoration: none !important;
 }
 
 a.pdf-link::after {
@@ -136,6 +146,7 @@ input:focus {
 
 /* For nested sidebar naviagation*/
 .bd-links__title,
-.bd-links .reference.internal {
+.bd-links .reference.internal,
+.bd-links .caption {
     color: #ffffff !important; /* White text for maximum contrast against grey sidebar layout*/
 }

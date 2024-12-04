@@ -2,7 +2,7 @@
 title: FAQ's
 ---
 
-# FAQ'S
+# FAQ
 
 Content for FAQS...
 

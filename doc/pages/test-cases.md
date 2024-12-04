@@ -2,7 +2,7 @@
 title: Test Cases
 ---
 
-# Test Case
+# Test Cases
 
 Content for Test Cases...
 
