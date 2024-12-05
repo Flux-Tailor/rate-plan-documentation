@@ -29,6 +29,7 @@ extensions = [
     'sphinx_design',
 ]
 
+myst_title_to_header = True #necessary to have sidebar show title and not header
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 

@@ -34,13 +34,12 @@
 
 /* Link styling */
 a:not(.headerlink):not(.bd-footer-link):not(.navbar-brand):not(.nav-link) {
-  padding-right: 1.5em;
+  padding-right: 0.5em;
   position: relative;
 }
 
 a:not(.headerlink):not(.bd-footer-link):not(.navbar-brand):not(.nav-link)::after {
   content: "🔗";
-  position: absolute;
   right: 0.3em;
   font-size: 0.85em;
 }
@@ -66,12 +65,13 @@ a.pdf-link::after {
 }
 
 
-/* Focus states except for logo, places gold border around what you click*/
+/* Focus states except for logo, places grey highliht around what you click*/
 a:not(.navbar-brand):focus, 
 button:focus, 
 input:focus {
-   outline: 3px solid var(--nyserda-gold);
-   outline-offset: 2px;
+    background-color: rgba(217, 217, 217, 0.3); /* subtle gray */
+    outline: none;
+    text-decoration: underline;
 }
 
 /* Necessary visible focus indicator, focus for old browswers and focus-visible for modern broswers*/
@@ -149,4 +149,27 @@ input:focus {
 .bd-links .reference.internal,
 .bd-links .caption {
     color: #ffffff !important; /* White text for maximum contrast against grey sidebar layout*/
+}
+
+/* Hide the first h1 (auto-generated title) but keep other h1s */
+.bd-article > section:first-child > h1 {
+  display: none;
+}
+
+/* Hide the first entry (aka title that was converted into an H1 by myst) in the right-side TOC */
+.bd-toc-nav > ul > li:first-child {
+  display: none;
+}
+
+/* Hover effect for sidebar links with light/dark mode support */
+.bd-links .reference.internal:hover {
+  background-color: rgba(255, 255, 255, 0.1);  /* subtle light overlay */
+  transform: translateX(4px);  /* slight shift right */
+  transition: all 0.2s ease;
+}
+
+/* Remove underline and link icon from prev/next navigation */
+.prev-next-area a, 
+.prev-next-area a::after {
+    content: none !important;
 }

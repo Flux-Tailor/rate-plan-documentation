@@ -1,5 +1,5 @@
 ---
-title: Rate Plan Schema Documentation
+title: Introduction
 ---
 
 # Rate Plan Schema Documentation
@@ -8,13 +8,13 @@ title: Rate Plan Schema Documentation
 :maxdepth: 4
 :hidden:
 
-Introduction <self>
-pages/data-schema-resources
-pages/test-cases
-pages/data-inputs
-pages/data-output-access
-pages/feedback
-pages/faqs
+self
+data-schema-resource
+test-cases
+data-input
+data-output-access
+feedback
+faq
 ```
 
 ## Introduction
