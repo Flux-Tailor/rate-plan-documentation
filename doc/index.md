@@ -14,7 +14,7 @@ The [Integrated Energy Data Resource (IEDR)](https://iedr.nyserda.ny.gov) is wor
   - [GitHub repository hosting XSD schemas](https://github.com/Flux-Tailor/rate-plan-schema)
     
   - [Rate Plan Schema Docs - rate plan data transfer (v0.99.7-dev)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.99.7-dev/rate_plan_data_transfer/rate_plan_data_transfer.html)
-  - [Rate Plan Schema Docs - rate plan data output (v0.99.7-dev)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.99.7-dev/rate_plans/rate_plans.html)
+  - [Rate Plan Schema Docs - rate plans (v0.99.7-dev)](https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.99.7-dev/rate_plans/rate_plans.html)
 
 #### Test Cases
   - [GitHub repository hosting XML test instances](https://github.com/Flux-Tailor/rate-plan-test-cases)
