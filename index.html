@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VML9CQJGL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8VML9CQJGL');
+    </script>
+    
+    <title>Rate Plan Schema Documentation &#8212; Rate Plan Schema Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=dbcd8749" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=2709fde1"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script src="_static/js/custom.js?v=07fb1552"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search docs..."
+         aria-label="Search docs..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Rate Plan Schema Documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<!--Navbar is empty but showing up twice so w/ this it doesnt appear-->
+</div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Flux-Tailor/rate-plan-documentation" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section" role="complementary" aria-label="Primary sidebar">
+    
+    
+    <!--This wraps the navigation items in a nav landmark to make them discoverable by screen readers.
+        The aria-label provides a unique name to distinguish it from other navigation sections.-->
+      <nav class="sidebar-header-items__center" aria-label="Site navigation"> 
+        
+          
+          
+            <div class="navbar-item">
+<!--Navbar is empty but showing up twice so w/ this it doesnt appear-->
+</div>
+          
+        
+      </nav>
+    
+    
+    
+    <!-- Theme switcher and GitHub links are a different type of navigation; settings/external links.
+         Using nav with a distinct aria-label helps screen reader users understand this is a different navigation area. -->
+      <nav class="sidebar-header-items__end" aria-label="Site settings"> 
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Flux-Tailor/rate-plan-documentation" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </nav>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+      <!-- The search form needs a search landmark role to identify it as a search functionality.
+           This helps screen reader users quickly locate the search feature on the page. -->
+        <div class="sidebar-primary-item" role="search">
+<!--Override, only difference is button addition and removing short cut-->
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search docs..."
+         aria-label="Search docs..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <input type="submit" 
+         value="Search"
+         class="btn btn-primary ms-2"/>
+  <!-- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span> -->
+</form></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="rate-plan-schema-documentation">
+<h1>Rate Plan Schema Documentation<a class="headerlink" href="#rate-plan-schema-documentation" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://iedr.nyserda.ny.gov" rel="noopener noreferrer" target="_blank">Integrated Energy Data Resource (IEDR)</a> is working to improve access to rate plan data. This website and its associated schema and test case repositories support the development of a new data schema and data transfer standard for energy rate plan data. The schema will expand on the rate plan data made available in the current <a class="reference external" href="https://iedr.nyserda.ny.gov/rate-plan/" rel="noopener noreferrer" target="_blank">IEDR Rate Plan Browser</a> data set to include all Rate Plan parameters needed for cost modeling. The rate plan schema is designed to standardize the representation of energy rate plans.</p>
+<section id="rate-plan-xml-schema">
+<h3>Rate Plan XML Schema<a class="headerlink" href="#rate-plan-xml-schema" title="Link to this heading">#</a></h3>
+<section id="schema-documentation">
+<h4>Schema Documentation<a class="headerlink" href="#schema-documentation" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Flux-Tailor/rate-plan-schema" rel="noopener noreferrer" target="_blank">GitHub repository hosting XSD schemas</a></p></li>
+<li><p><a class="reference external" href="https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.99.7-dev/rate_plan_data_transfer/rate_plan_data_transfer.html" rel="noopener noreferrer" target="_blank">Rate Plan Schema Docs - rate plan data transfer (v0.99.7-dev)</a></p></li>
+<li><p><a class="reference external" href="https://flux-tailor.github.io/rate-plan-documentation/_static/rate-plan-schema-docs/v0.99.7-dev/rate_plans/rate_plans.html" rel="noopener noreferrer" target="_blank">Rate Plan Schema Docs - rate plans (v0.99.7-dev)</a></p></li>
+</ul>
+</section>
+<section id="test-cases">
+<h4>Test Cases<a class="headerlink" href="#test-cases" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Flux-Tailor/rate-plan-test-cases" rel="noopener noreferrer" target="_blank">GitHub repository hosting XML test instances</a></p></li>
+</ul>
+</section>
+<section id="core-concepts">
+<h4>Core Concepts<a class="headerlink" href="#core-concepts" title="Link to this heading">#</a></h4>
+<section id="what-s-a-rate-plan">
+<h5>What’s a Rate Plan?<a class="headerlink" href="#what-s-a-rate-plan" title="Link to this heading">#</a></h5>
+<p>An energy rate plan is a structured set of parameters that determine how energy consumption is charged for a customer on this rate plan. Sometimes rate plans are referred to as “tariffs” or “rates”.</p>
+<p>The rate plan schema includes:</p>
+<ul class="simple">
+<li><p>Core components: rate plans and their associated eligibility limits and other criteria used to identify available rate plan options</p></li>
+<li><p>Supporting elements: time-of-use periods, service thresholds, and other elements that determine which rate plan charges are applicable</p></li>
+<li><p>Charges:</p>
+<ul>
+<li><p>Charges from Tariff Book Leaves</p></li>
+<li><p>Charges from Tariff Statements</p></li>
+<li><p>Market Supply Charges</p></li>
+<li><p>References to formally published tariff documentation and utility data sets.</p></li>
+</ul>
+</li>
+<li><p>Links to key resources and sections:</p>
+<ul>
+<li><p><a class="reference external" href="https://iedr.nyserda.ny.gov/rate-plan/" rel="noopener noreferrer" target="_blank">Existing IEDR Rate Plan Browser with rate plan options</a></p></li>
+<li><p><a class="reference external" href="https://iedr-public-static-files.s3.amazonaws.com/documentation/IEDR_DataDictionary-RatePlanData_V001_20240112.pdf" rel="noopener noreferrer" target="_blank">Rate Plan Browser Data Dictionary</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="what-s-the-relationship-between-utilities-operating-companies-service-classes-and-a-rate-plan">
+<h4>What’s the relationship between Utilities, Operating Companies, Service Classes and a “Rate Plan” ?<a class="headerlink" href="#what-s-the-relationship-between-utilities-operating-companies-service-classes-and-a-rate-plan" title="Link to this heading">#</a></h4>
+<p>The relationship between these entities forms the structure of how energy services are organized and priced:</p>
+<ol class="arabic simple">
+<li><p><strong>Utilities</strong>: These are the overarching companies that provide energy services to consumers. They may operate in one or multiple regions.</p></li>
+<li><p><strong>Operating Companies</strong>: These are subsidiaries or divisions of utilities that manage operations in specific geographic areas or for particular types of services.</p></li>
+<li><p><strong>Service Classes</strong>: Within each operating company, customers are categorized into different service classes based on their energy usage patterns, type of service; customer class (e.g. residential, commercial, industrial, etc.) and other factors.</p></li>
+<li><p><strong>Rate Plans</strong>: For each service class, several “sub” service classes each with several rate plans options may exist A rate plan is a specific pricing structure that determines how a customer is charged for their energy usage.</p></li>
+</ol>
+<p>The hierarchy typically looks something like this:</p>
+<p>Utility → Operating Company → Service Type → Service Class → Sub Service Class  → Rate Plan</p>
+<p>For instance:</p>
+<ul class="simple">
+<li><p>We have a utility named “National Energy Corp.”</p></li>
+<li><p>One of its operating companies is called “Midwest Power Distribution”</p></li>
+<li><p>Within it, there are multiple service classes for “Residential” users</p></li>
+<li><p>This service class could have multiple sub service classes and rate plans like “SC-1A Standard Residential” or “SC1B Time-of-Use Residential” each of which are designed to meet different customer needs, usage patterns, or policy objectives.</p></li>
+</ul>
+</section>
+</section>
+<section id="versioning-and-upgrade-process">
+<h3>Versioning and Upgrade Process<a class="headerlink" href="#versioning-and-upgrade-process" title="Link to this heading">#</a></h3>
+<p>Distinct branches of the specification will be maintained in the Rate Plan Schema Repository for each version of the standard.</p>
+<p>Branches can be in one of two distinct states:</p>
+<ul class="simple">
+<li><p>Development – indicated by a -dev suffix e.g. 3.1-dev. This branch is not yet released and both schema and documentation in it should be considered unstable and experimental.</p></li>
+<li><p>Live – indicated by the lack of a suffix e.g 3.1. This branch has been released and tagged, and should be considered stable. Some documentation may be updated on a live branch, but no changes to the schema can be made.</p></li>
+</ul>
+<p>The Rate Plan Schema uses <a class="reference external" href="https://semver.org/" rel="noopener noreferrer" target="_blank">Semantic Versioning</a> to distinguish between different versions of the standard in the format of MAJOR.MINOR.PATCH.</p>
+<ul class="simple">
+<li><p>MAJOR versions introduce backwards incompatible changes</p></li>
+<li><p>MINOR versions introduce new features or functionality in a backwards compatible manner</p></li>
+<li><p>PATCH versions make backwards-compatible bugfixes</p></li>
+</ul>
+<p>If a change is backwards compatible it means that data published using an earlier version still meets the requirements of the standard. For example data published using version 3.0 would be compatible with version 3.1.</p>
+<p>If a change is not backwards compatible it may mean that data published using an earlier version will no longer meet the requirements. Not all Rate Plan data uses all parts of the standard, so it is possible that some data may still be conformant to a newer MAJOR version but it is not guaranteed.</p>
+<p>You can see a list of all the version upgrades in the Rate Plan Schema by reviewing our
+<a class="reference external" href="https://github.com/Flux-Tailor/rate-plan-schema/releases" rel="noopener noreferrer" target="_blank">changelog.</a></p>
+<p>The documentation corresponding to the specific versions of the Rate Plan Schema can be found on this site.</p>
+</section>
+</section>
+<section id="documentation-and-underlying-source">
+<h2>Documentation and Underlying Source<a class="headerlink" href="#documentation-and-underlying-source" title="Link to this heading">#</a></h2>
+<p>Our documentation is versioned and openly available on GitHub. The documentation is built using <a class="reference external" href="https://www.sphinx-doc.org/" rel="noopener noreferrer" target="_blank">Sphinx</a> and <a class="reference external" href="https://www.oxygenxml.com/" rel="noopener noreferrer" target="_blank">OxygenXML</a> and published to the web via GitHub Pages for access.
+Our documentation is versioned and openly available on GitHub. The documentation is built using <a class="reference external" href="https://www.sphinx-doc.org/" rel="noopener noreferrer" target="_blank">Sphinx</a> and <a class="reference external" href="https://www.oxygenxml.com/" rel="noopener noreferrer" target="_blank">OxygenXML</a> and published to the web via GitHub Pages for conveninet access.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Flux-Tailor/rate-plan-documentation" rel="noopener noreferrer" target="_blank">GitHub Repository</a></p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-plan-xml-schema">Rate Plan XML Schema</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#schema-documentation">Schema Documentation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#test-cases">Test Cases</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concepts">Core Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-a-rate-plan">What’s a Rate Plan?</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-the-relationship-between-utilities-operating-companies-service-classes-and-a-rate-plan">What’s the relationship between Utilities, Operating Companies, Service Classes and a “Rate Plan” ?</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#versioning-and-upgrade-process">Versioning and Upgrade Process</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation-and-underlying-source">Documentation and Underlying Source</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright NYSERDA.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
