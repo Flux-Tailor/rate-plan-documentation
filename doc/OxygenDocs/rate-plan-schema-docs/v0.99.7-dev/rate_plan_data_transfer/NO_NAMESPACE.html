@@ -11923,7 +11923,7 @@ var modelBoxes= new Array('model_dataTransfer',
                         <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_ratePlanTerritories" type="image" src="img/btM.gif" alt="expand/collapse" onclick="switchState('model_ratePlanTerritories');" class="control" /></div>
                         </td>
                         <td>
-                           <div id="model_ratePlanTerritories" style="display:block"><b><a href="NO_NAMESPACE.html#ratePlanTerritories_ratePlanTerritory" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for &#34;No namespace&#34;')">ratePlanTerritory</a></b></div>
+                           <div id="model_ratePlanTerritories" style="display:block"><b><a href="NO_NAMESPACE.html#ratePlanTerritories_ratePlanTerritory" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for &#34;No namespace&#34;')">ratePlanTerritory+</a></b></div>
                         </td>
                      </tr>
                      <tr>
@@ -11941,7 +11941,7 @@ var modelBoxes= new Array('model_dataTransfer',
                                  <tr>
                                     <td style="width:100%">
                                        <pre><span class="tEl">&lt;ratePlanTerritories</span><span class="tEl">&gt;</span><span class="tI">
-  </span><span class="tEl">&lt;ratePlanTerritory</span><span class="tT"> </span><span class="tAN">isDeletedRecord=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">isReplacementRecord=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/ratePlanTerritory&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ratePlanTerritory</span><span class="tT"> </span><span class="tAN">isDeletedRecord=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">isReplacementRecord=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,unbounded}</span><span class="tEl">&lt;/ratePlanTerritory&gt;</span><span class="tI">
 </span><span class="tEl">&lt;/ratePlanTerritories&gt;</span></pre>
                                     </td>
                                  </tr>
@@ -11962,7 +11962,7 @@ var modelBoxes= new Array('model_dataTransfer',
                                        <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"ratePlanTerritories"</span><span class="tEl">&gt;</span><span class="tI">
   </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
     </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
-      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"ratePlanTerritory"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"ratePlanTerritory"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">&gt;</span><span class="tI">
         </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
           </span><span class="tEl">&lt;xs:complexContent</span><span class="tEl">&gt;</span><span class="tI">
             </span><span class="tEl">&lt;xs:extension</span><span class="tAN"> base=</span><span class="tAV">"RatePlanTerritoryType"</span><span class="tEl">&gt;</span><span class="tI">
@@ -12038,6 +12038,10 @@ var modelBoxes= new Array('model_dataTransfer',
                                  <tr>
                                     <td class="firstColumn" style="white-space: nowrap;">content</td>
                                     <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>unbounded</b></td>
                                  </tr>
                               </table>
                            </div>
@@ -12139,7 +12143,7 @@ var modelBoxes= new Array('model_dataTransfer',
                               <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                  <tr>
                                     <td style="width:100%">
-                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"ratePlanTerritory"</span><span class="tEl">&gt;</span><span class="tI">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"ratePlanTerritory"</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tEl">&gt;</span><span class="tI">
   </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
     </span><span class="tEl">&lt;xs:complexContent</span><span class="tEl">&gt;</span><span class="tI">
       </span><span class="tEl">&lt;xs:extension</span><span class="tAN"> base=</span><span class="tAV">"RatePlanTerritoryType"</span><span class="tEl">&gt;</span><span class="tI">
