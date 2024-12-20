@@ -114,22 +114,22 @@
     ><g font-family="sans-serif" font-size="11px" stroke-linecap="butt" text-rendering="optimizeLegibility"
     ><circle clip-path="url(#clipPath1)" cx="180" cy="67" fill="none" r="5"
       /><line clip-path="url(#clipPath1)" fill="none" x1="178" x2="182" y1="67" y2="67"
-      /><polygon clip-path="url(#clipPath1)" fill="rgb(229,229,229)" points=" 218 84 219 83 219 82 220 81 221 80 222 79 223 79 224 78 401 78 402 79 403 79 404 80 405 81 406 82 406 83 407 84 407 92 406 93 406 94 405 95 404 96 403 97 402 97 401 98 224 98 223 97 222 97 221 96 220 95 219 94 219 93 218 92" stroke="none"
-      /><polygon clip-path="url(#clipPath1)" fill="rgb(204,204,204)" points=" 217 83 218 82 218 81 219 80 220 79 221 78 222 78 223 77 400 77 401 78 402 78 403 79 404 80 405 81 405 82 406 83 406 91 405 92 405 93 404 94 403 95 402 96 401 96 400 97 223 97 222 96 221 96 220 95 219 94 218 93 218 92 217 91" stroke="none"
-      /><polygon clip-path="url(#clipPath1)" fill="rgb(153,153,153)" points=" 216 82 217 81 217 80 218 79 219 78 220 77 221 77 222 76 399 76 400 77 401 77 402 78 403 79 404 80 404 81 405 82 405 90 404 91 404 92 403 93 402 94 401 95 400 95 399 96 222 96 221 95 220 95 219 94 218 93 217 92 217 91 216 90" stroke="none"
+      /><polygon clip-path="url(#clipPath1)" fill="rgb(229,229,229)" points=" 218 84 219 83 219 82 220 81 221 80 222 79 223 79 224 78 388 78 389 79 390 79 391 80 392 81 393 82 393 83 394 84 394 92 393 93 393 94 392 95 391 96 390 97 389 97 388 98 224 98 223 97 222 97 221 96 220 95 219 94 219 93 218 92" stroke="none"
+      /><polygon clip-path="url(#clipPath1)" fill="rgb(204,204,204)" points=" 217 83 218 82 218 81 219 80 220 79 221 78 222 78 223 77 387 77 388 78 389 78 390 79 391 80 392 81 392 82 393 83 393 91 392 92 392 93 391 94 390 95 389 96 388 96 387 97 223 97 222 96 221 96 220 95 219 94 218 93 218 92 217 91" stroke="none"
+      /><polygon clip-path="url(#clipPath1)" fill="rgb(153,153,153)" points=" 216 82 217 81 217 80 218 79 219 78 220 77 221 77 222 76 386 76 387 77 388 77 389 78 390 79 391 80 391 81 392 82 392 90 391 91 391 92 390 93 389 94 388 95 387 95 386 96 222 96 221 95 220 95 219 94 218 93 217 92 217 91 216 90" stroke="none"
     /></g
     ><g fill="url(#linearGradient7)" font-family="sans-serif" font-size="11px" shape-rendering="crispEdges" stroke="url(#linearGradient7)" stroke-linecap="butt" text-rendering="geometricPrecision"
-    ><polygon clip-path="url(#clipPath1)" points=" 214 80 215 79 215 78 216 77 217 76 218 75 219 75 220 74 397 74 398 75 399 75 400 76 401 77 402 78 402 79 403 80 403 88 402 89 402 90 401 91 400 92 399 93 398 93 397 94 220 94 219 93 218 93 217 92 216 91 215 90 215 89 214 88" stroke="none"
+    ><polygon clip-path="url(#clipPath1)" points=" 214 80 215 79 215 78 216 77 217 76 218 75 219 75 220 74 384 74 385 75 386 75 387 76 388 77 389 78 389 79 390 80 390 88 389 89 389 90 388 91 387 92 386 93 385 93 384 94 220 94 219 93 218 93 217 92 216 91 215 90 215 89 214 88" stroke="none"
     /></g
     ><g fill="silver" font-family="sans-serif" font-size="11px" stroke="silver" stroke-linecap="butt" text-rendering="optimizeLegibility"
-    ><polygon clip-path="url(#clipPath1)" fill="none" points=" 214 80 215 79 215 78 216 77 217 76 218 75 219 75 220 74 397 74 398 75 399 75 400 76 401 77 402 78 402 79 403 80 403 88 402 89 402 90 401 91 400 92 399 93 398 93 397 94 220 94 219 93 218 93 217 92 216 91 215 90 215 89 214 88"
+    ><polygon clip-path="url(#clipPath1)" fill="none" points=" 214 80 215 79 215 78 216 77 217 76 218 75 219 75 220 74 384 74 385 75 386 75 387 76 388 77 389 78 389 79 390 80 390 88 389 89 389 90 388 91 387 92 386 93 385 93 384 94 220 94 219 93 218 93 217 92 216 91 215 90 215 89 214 88"
     /></g
     ><g font-family="sans-serif" font-size="11px" shape-rendering="crispEdges" stroke-linecap="butt" text-rendering="geometricPrecision"
     ><text clip-path="url(#clipPath1)" stroke="none" x="222" xml:space="preserve" y="88"
-      >scenarioVariableMeasurement</text
-      ><circle clip-path="url(#clipPath1)" cx="412" cy="84" fill="none" r="5" shape-rendering="auto" text-rendering="optimizeLegibility"
-      /><line clip-path="url(#clipPath1)" fill="none" shape-rendering="auto" text-rendering="optimizeLegibility" x1="410" x2="414" y1="84" y2="84"
-      /><line clip-path="url(#clipPath1)" fill="none" shape-rendering="auto" text-rendering="optimizeLegibility" x1="412" x2="412" y1="82" y2="86"
+      >profileVariableMeasurement</text
+      ><circle clip-path="url(#clipPath1)" cx="399" cy="84" fill="none" r="5" shape-rendering="auto" text-rendering="optimizeLegibility"
+      /><line clip-path="url(#clipPath1)" fill="none" shape-rendering="auto" text-rendering="optimizeLegibility" x1="397" x2="401" y1="84" y2="84"
+      /><line clip-path="url(#clipPath1)" fill="none" shape-rendering="auto" text-rendering="optimizeLegibility" x1="399" x2="399" y1="82" y2="86"
     /></g
     ><g fill="silver" font-family="sans-serif" font-size="11px" stroke="silver" stroke-linecap="butt" text-rendering="optimizeLegibility"
     ><line clip-path="url(#clipPath1)" fill="none" x1="186" x2="189" y1="67" y2="67"
