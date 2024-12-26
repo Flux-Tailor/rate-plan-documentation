@@ -36,13 +36,17 @@
     ><g fill="url(#linearGradient1)" font-family="sans-serif" font-size="11px" shape-rendering="crispEdges" stroke="url(#linearGradient1)" text-rendering="geometricPrecision"
     ><polygon clip-path="url(#clipPath1)" points=" 0 12 1 11 1 10 2 9 3 8 4 7 5 7 6 6 110 6 111 7 112 7 113 8 114 9 115 10 115 11 116 12 116 20 115 21 115 22 114 23 113 24 112 25 111 25 110 26 6 26 5 25 4 25 3 24 2 23 1 22 1 21 0 20" stroke="none"
     /></g
-    ><g font-family="sans-serif" font-size="11px" stroke-linecap="butt" text-rendering="optimizeLegibility"
+    ><g fill="silver" font-family="sans-serif" font-size="11px" stroke="silver" stroke-linecap="butt" text-rendering="optimizeLegibility"
     ><polygon clip-path="url(#clipPath1)" fill="none" points=" 0 12 1 11 1 10 2 9 3 8 4 7 5 7 6 6 110 6 111 7 112 7 113 8 114 9 115 10 115 11 116 12 116 20 115 21 115 22 114 23 113 24 112 25 111 25 110 26 6 26 5 25 4 25 3 24 2 23 1 22 1 21 0 20"
-      /><text clip-path="url(#clipPath1)" shape-rendering="crispEdges" stroke="none" text-rendering="geometricPrecision" x="8" xml:space="preserve" y="20"
+    /></g
+    ><g font-family="sans-serif" font-size="11px" shape-rendering="crispEdges" stroke-linecap="butt" text-rendering="geometricPrecision"
+    ><text clip-path="url(#clipPath1)" stroke="none" x="8" xml:space="preserve" y="20"
       >customerClasses</text
-      ><circle clip-path="url(#clipPath1)" cx="125" cy="16" fill="none" r="5"
-      /><line clip-path="url(#clipPath1)" fill="none" x1="123" x2="127" y1="16" y2="16"
-      /><circle clip-path="url(#clipPath1)" cx="197" cy="20" fill="rgb(229,229,229)" r="14" stroke="none"
+      ><circle clip-path="url(#clipPath1)" cx="125" cy="16" fill="none" r="5" shape-rendering="auto" text-rendering="optimizeLegibility"
+      /><line clip-path="url(#clipPath1)" fill="none" shape-rendering="auto" text-rendering="optimizeLegibility" x1="123" x2="127" y1="16" y2="16"
+    /></g
+    ><g fill="rgb(229,229,229)" font-family="sans-serif" font-size="11px" stroke="rgb(229,229,229)" stroke-linecap="butt" text-rendering="optimizeLegibility"
+    ><circle clip-path="url(#clipPath1)" cx="197" cy="20" r="14" stroke="none"
       /><circle clip-path="url(#clipPath1)" cx="196" cy="19" fill="rgb(204,204,204)" r="14" stroke="none"
       /><circle clip-path="url(#clipPath1)" cx="195" cy="18" fill="rgb(153,153,153)" r="14" stroke="none"
     /></g
