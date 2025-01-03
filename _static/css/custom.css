@@ -1,0 +1,133 @@
+/** css/custom.css **/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* Color Variables - defined once at the top */
+:root {
+  --nyserda-blue: #1d428a;
+  --nyserda-gold: #f2a900;
+}
+
+/* Dark mode colors */
+[data-theme="dark"] {
+  --nyserda-blue: #4B7BE3;
+  --nyserda-gold: #ffc240;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --nyserda-blue: #003366;
+    --nyserda-gold: #cc7700;
+  }
+}
+
+/* Font for headings*/
+.bd-content h1,
+.bd-content h2,
+.bd-content h3,
+.bd-content h4,
+.bd-content h5,
+.bd-content h6,
+.bd-header-article h1 {
+    font-family: Lato, proxima-nova, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* Link styling */
+a:not(.headerlink):not(.bd-footer-link):not(.navbar-brand):not(.nav-link) {
+  padding-right: 1.5em;
+  position: relative;
+}
+
+a:not(.headerlink):not(.bd-footer-link):not(.navbar-brand):not(.nav-link)::after {
+  content: "🔗";
+  position: absolute;
+  right: 0.3em;
+  font-size: 0.85em;
+}
+
+.bd-article a:not(.headerlink):not(.nav-link):not(.btn):not(.logo__title),
+a:not(.nav-link):not(.navbar-brand):not(.btn):not(.logo__title) {
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px !important;
+}
+
+a.pdf-link::after {
+  content: "📄" !important;
+}
+
+
+/* Focus states except for logo, places gold border around what you click*/
+a:not(.navbar-brand):focus, 
+button:focus, 
+input:focus {
+   outline: 3px solid var(--nyserda-gold);
+   outline-offset: 2px;
+}
+.pst-navbar-icon.sidebar-toggle:focus,
+.pst-navbar-icon.sidebar-toggle:focus-visible {
+    outline: 3px solid var(--nyserda-gold);
+    outline-offset: 2px;
+}
+
+/* The entire search input container*/
+/* Search styling */
+.bd-search {
+    display: flex; /* Places search button below input */
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: var(--nyserda-blue) !important;
+    padding: 1rem !important;
+    margin-top: -1.9rem !important;
+    margin-right: -2rem !important;
+    width: 100% !important;
+}
+  /* The search field */
+.bd-search input[type="search"] {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid var(--nyserda-gold);
+    border-radius: 4px;
+    background-color: white;
+    margin: 0;
+}
+
+.bd-search input[type="submit"] {
+    background: var(--nyserda-gold) !important;
+    color: #000000 !important;
+    width: 100% !important;
+}
+
+.bd-search input[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+.bd-search input[type="submit"]:focus {
+    outline: 2px solid var(--nyserda-gold);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px rgba(var(--nyserda-gold-rgb), 0.25);
+    opacity: 0.9;
+}
+
+[data-theme="dark"] .bd-search input[type="search"] {
+    background-color: #14181e;
+}
+
+[data-theme="dark"] .bd-search input[type="submit"] {
+    color: black !important;
+}
+
+/* Layout */
+.bd-sidebar-primary {
+    background-color: #404040 !important;
+}
+
+/* On search results page between "Search" and search container fixing overlap since we created our own*/
+.bd-search-container h1 {
+    margin-bottom: 2rem !important;
+}
+
+/* Hiding pydata theme search field (Upate: this can be done with html)*/
+.search-button-field,
+.navbar-persistent--mobile {
+    display: none !important;
+}
